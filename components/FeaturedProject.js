@@ -22,13 +22,14 @@ export default function FeaturedProject() {
           
           <div className={styles.textColumn}>
             <h3 style={{ fontSize: '2rem', margin: '0 0 15px 0' }}>منصة زميلي</h3>
+            {/* تم التعديل هنا */}
             <p style={{ lineHeight: '1.8', marginBottom: '30px', color: '#E2E8F0' }}>
-              هي ليست مجرد منصة، بل حل هندسي متكامل لأزمة حقيقية في القطاع التعليمي. تم بناء "زميلي" لمواجهة تحدي إدارة حصص الاحتياط، معتمدًا على منطق برمجي ديناميكي يضمن توزيع الحصص بكفاءة وعدالة.
+              هي ليست مجرد منصة، بل حل هندسي متكامل لأزمة حقيقية في القطاع التعليمي. تم بناء 'زميلي' لمواجهة تحدي إدارة حصص الاحتياط، معتمدًا على منطق برمجي ديناميكي يضمن توزيع الحصص بكفاءة وعدالة.
             </p>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', gap: '15px', marginBottom: '40px' }}>
-              <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>HTML</li>
-              <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>CSS</li>
-              <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>JavaScript</li>
+              <li style={{ backgroundColor: '#1A2C', padding: '5px 15px', borderRadius: '20px' }}>HTML</li>
+              <li style={{ backgroundColor: '#1A2C', padding: '5px 15px', borderRadius: '20px' }}>CSS</li>
+              <li style={{ backgroundColor: '#1A2C', padding: '5px 15px', borderRadius: '20px' }}>JavaScript</li>
             </ul>
             <a 
               href={projectUrl} 
