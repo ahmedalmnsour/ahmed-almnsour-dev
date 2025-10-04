@@ -1,0 +1,14 @@
+/* Footer.module.css */
+
+.footer {
+  background-color: #171923;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #2D3748;
+}
+
+.copyrightText {
+  color: #718096;
+  font-size: 0.9rem;
+  margin: 0;
+}
