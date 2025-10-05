@@ -7,9 +7,8 @@ export default function AboutSection() {
       <div className={styles.maxWidthWrapper}>
         <h2 className={styles.sectionTitle}>نبذة عني</h2>
         <p className={styles.aboutText}>
-          أنا مطور متخصص بشكل أساسي في الواجهة الأمامية (Frontend) باستخدام JavaScript, React, و Next.js، مع شغف لبناء واجهات مستخدم نظيفة وتفاعلية. بالإضافة إلى ذلك، لدي خبرة عملية ومعرفة جيدة في بناء الواجهات الخلفية (Backend) باستخدام PHP و Python، مما يمنحني القدرة على فهم وتنفيذ المشاريع من الألف إلى الياء.
+         مطور متخصص بشكل أساسي في الواجهة الأمامية (Frontend) باستخدام JavaScript, React, و Next.js، مع شغف لبناء واجهات مستخدم نظيفة وتفاعلية. بالإضافة إلى ذلك، لدي خبرة عملية ومعرفة جيدة في بناء الواجهات الخلفية (Backend) باستخدام PHP و Python، مما يمنحني القدرة على فهم وتنفيذ المشاريع من الألف إلى الياء.
           <br /><br />
-          <strong>أنا أحول القهوة إلى كود ☕</strong>
         </p>
       </div>
     </section>
