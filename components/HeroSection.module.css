@@ -28,13 +28,11 @@
   font-size: 1rem;
 }
 
-/* الكود السحري للتجاوب مع الجوال */
+/* للجوال */
 @media (max-width: 768px) {
   .mainTitle {
-    font-size: 2.5rem; /* حجم خط أصغر ومعقول على شاشات الجوال */
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-size: 2rem; /* غيّر هذا الرقم للتكبير/التصغير */
   }
-
   .subtitle {
     font-size: 1.2rem;
   }
@@ -43,6 +41,6 @@
 /* للشاشات الصغيرة جداً */
 @media (max-width: 480px) {
   .mainTitle {
-    font-size: 1.4rem;
+    font-size: 1.8rem; /* غيّر هذا الرقم للتكبير/التصغير */
   }
 }
