@@ -11,10 +11,10 @@ export default function FeaturedProject() {
         
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>
-            مشروعي المُميّز
+             مشروعي الأخير
           </h2>
           <p className={styles.sectionSubtitle}>
-            هذا المشروع يمثل خلاصة خبرتي في تحويل الأفكار إلى حلول برمجية عملية.
+          تطبيق عملي يوظف التقنيات الحديثة لأتمتة العمليات المدرسية وتحقيق العدالة في توزيع المهام.
           </p>
         </div>
 
