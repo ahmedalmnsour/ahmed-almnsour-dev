@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# موقع أحمد المنصور الشخصي (Portfolio Website)
 
-## Getting Started
+أهلاً بكم في المستودع الخاص بموقعي الشخصي. هذا المشروع هو منصتي لعرض أعمالي، مهاراتي، وخبراتي.
 
-First, run the development server:
+**[رابط الموقع المباشر: ahmed.almnsour.net](https://ahmed.almnsour.net/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 الهدف من المشروع
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+الهدف من بناء هذا الموقع هو إنشاء هوية رقمية
+الموقع بمثابة سيرة ذاتية تفاعلية ونقطة تواصل أساسية.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ التقنيات المستخدمة
 
-To learn more about Next.js, take a look at the following resources:
+تم بناء هذا الموقع باستخدام مجموعة من أحدث التقنيات لضمان الأداء العالي والتجربة المميزة:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **Next.js:** إطار عمل React للبيئات الإنتاجية، يوفر أداءً ممتازًا وتجربة تطوير قوية.
+* **React:** المكتبة الأساسية لبناء واجهات المستخدم.
+* **TypeScript:** لإضافة الأمان النوعي (Type Safety) وجعل الكود أكثر قوة وموثوقية.
+* **Tailwind CSS:** إطار عمل CSS لتصميم سريع ومرن ومخصص.
+* **Framer Motion:** مكتبة لإضافة حركات ورسوم متحركة سلسة وجذابة.
+* **Vercel:** المنصة المستخدمة لنشر واستضافة الموقع.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 كيفية تشغيل المشروع محليًا
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+إذا كنت مهتمًا باستكشاف الكود، يمكنك تشغيله على جهازك باتباع الخطوات التالية:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  **نسخ المستودع:**
+    ```bash
+    git clone [https://github.com/ahmedalmnsour/ahmed-almnsour-dev.git](https://github.com/ahmedalmnsour/ahmed-almnsour-dev.git)
+    ```
+2.  **الدخول إلى المجلد:**
+    ```bash
+    cd ahmed-almnsour-dev
+    ```
+3.  **تثبيت الاعتماديات:**
+    ```bash
+    npm install
+    ```
+4.  **تشغيل خادم التطوير:**
+    ```bash
+    npm run dev
+    ```
+5.  افتح [http://localhost:3000](http://localhost:3000) في متصفحك.
+
+---
+
+---
+
+
+
+## 💬 تواصل معي
+
+يسعدني دائمًا التواصل! يمكنك الوصول إلي عبر:
+
+* **📧 البريد الإلكتروني:** [اضغط هنا لمراسلتي](mailto:almnsour.ahmed@gmail.com)
+* **📱 واتساب:** [اضغط هنا لبدء محادثة](httpss://wa.me/96597311821)
