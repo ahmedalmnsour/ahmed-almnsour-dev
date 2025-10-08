@@ -13,6 +13,7 @@ export default function HeroSection() {
       <p className={styles.slogan}>
         <strong>
           أُحَوِّل القهوةَ ☕ إلى كود 
+          
           <span className={`material-symbols-outlined ${styles.codeIcon}`}>
             code
           </span>
