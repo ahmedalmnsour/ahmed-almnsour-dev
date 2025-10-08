@@ -1,10 +1,5 @@
 import React from 'react';
 import styles from './HeroSection.module.css';
-
-// استيراد الكلاس الخاص بمكتبة الأيقونات
-// هذا السطر ليس ضروريا إذا قمت بإضافة الرابط في index.html, ولكنه يساعد على الوضوح
-// import 'material-symbols'; 
-
 export default function HeroSection() {
   return (
     <div id="home" className={styles.heroContainer}>
@@ -13,7 +8,6 @@ export default function HeroSection() {
       <p className={styles.slogan}>
         <strong>
           أُحَوِّل القهوةَ ☕ إلى كود 
-          
           <span className={`material-symbols-outlined ${styles.codeIcon}`}>
             code
           </span>
