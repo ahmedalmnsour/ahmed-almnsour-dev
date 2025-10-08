@@ -6,8 +6,8 @@ export default function HeroSection() {
     // لاحظ كيف أن لدينا الآن div واحد فقط وهو الذي يحمل الـ id والكلاس معًا
     <div id="home" className={styles.heroContainer}>
       <h1 className={styles.mainTitle}>أحمد المنصور</h1>
-      <p className={styles.subtitle}>مطور برمجيات</p>
-      <p className={styles.slogan}><strong>أنا أحول القهوة إلى كود ☕</strong></p>
+      <p className={styles.subtitle}>مُطوِّر برمجيات</p>
+      <p className={styles.slogan}><strong> أُحَوِّل القهوةَ إلى كود ☕</strong></p>
     </div>
   );
 }
