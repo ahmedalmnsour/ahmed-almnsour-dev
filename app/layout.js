@@ -9,9 +9,13 @@ const tajawal = Tajawal({
 });
 
 export const metadata = {
-  title: 'Ahmed.Almnsour.dev',
-  description: 'Personal Portfolio',
-  viewport: 'width-device-width, initial-scale=1',
+  title: 'Ahmed Almnsour - Software Developer',
+  description: 'The personal portfolio for Ahmed Almnsour, a software developer specializing in modern web technologies like React and Next.js.',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {

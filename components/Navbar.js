@@ -16,13 +16,17 @@ export default function Navbar() {
 
   return (
     <header className={styles.navbar}>
-      <a href="#home" className={styles.logo} onClick={handleLinkClick}>
+      <a 
+        href="#home" 
+        className={styles.logo} 
+        onClick={handleLinkClick}
+        style={{ textDecoration: 'none' }} // <-- هذا هو التعديل
+      >
         Ahmed.Almnsour.dev
       </a>
       <nav>
         <ul className={isMenuOpen ? `${styles.navLinks} ${styles.active}` : styles.navLinks}>
           <li className={styles.navLink}><a href="#home" onClick={handleLinkClick}>الرئيسية</a></li>
-          {/* --- السطر المضاف --- */}
           <li className={styles.navLink}><a href="#about" onClick={handleLinkClick}>نبذة عني</a></li>
           <li className={styles.navLink}><a href="#project" onClick={handleLinkClick}>أعمالي</a></li>
           <li className={styles.navLink}><a href="#skills" onClick={handleLinkClick}>المهارات</a></li>

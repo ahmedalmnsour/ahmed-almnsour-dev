@@ -18,7 +18,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
-  text-decoration: none; /* <-- هذا هو السطر المسؤول عن إزالة الخط */
+  text-decoration: none !important;
 }
 
 .navLinks {
