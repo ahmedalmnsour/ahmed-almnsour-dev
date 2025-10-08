@@ -16,14 +16,12 @@ export default function Navbar() {
 
   return (
     <header className={styles.navbar}>
-      <a 
-        href="#home" 
-        className={styles.logo} 
-        onClick={handleLinkClick}
-        style={{ textDecoration: 'none' }} // <-- هذا هو التعديل
-      >
+      {/* --- هذا هو التعديل الوحيد والمهم --- */}
+      {/* تم تغيير الوسم <a> إلى <div> لإلغاء الرابط */}
+      <div className={styles.logo}>
         Ahmed.Almnsour.dev
-      </a>
+      </div>
+      
       <nav>
         <ul className={isMenuOpen ? `${styles.navLinks} ${styles.active}` : styles.navLinks}>
           <li className={styles.navLink}><a href="#home" onClick={handleLinkClick}>الرئيسية</a></li>

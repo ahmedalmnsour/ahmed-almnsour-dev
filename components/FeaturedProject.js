@@ -3,30 +3,31 @@ import Image from 'next/image';
 import styles from './FeaturedProject.module.css';
 
 export default function FeaturedProject() {
-  // --- هذا هو السطر الذي تم تصحيحه ---
   const projectUrl = 'https://www.myzameel.com/'; 
 
   return (
     <section id="project" className={styles.sectionContainer}>
       <div className={styles.maxWidthWrapper}>
-        
+
         <div className={styles.sectionHeader}>
+          {/* --- تم تعديل العنوان الرئيسي هنا --- */}
           <h2 className={styles.sectionTitle}>
-            مشروعي المُميّز
+            آخر مشاريعي
           </h2>
+          {/* --- تم تعديل العنوان الفرعي هنا --- */}
           <p className={styles.sectionSubtitle}>
-            هذا المشروع يمثل خلاصة خبرتي في تحويل الأفكار إلى حلول برمجية عملية.
+            نظرة على أحدث ما قمت ببنائه وتطبيق المهارات التقنية لحل مشكلة واقعية.
           </p>
         </div>
 
         <div className={styles.gridContainer}>
-          
+
           <div className={styles.textColumn}>
             <h3 style={{ fontSize: '2rem', margin: '0 0 15px 0' }}>منصة زميلي</h3>
             <p style={{ lineHeight: '1.8', marginBottom: '30px', color: '#E2E8F0' }}>
               هي ليست مجرد منصة، بل حل هندسي متكامل لأزمة حقيقية في القطاع التعليمي. تم بناء زميلي لمواجهة تحدي إدارة حصص الاحتياط، معتمدًا على منطق برمجي ديناميكي يضمن توزيع الحصص بكفاءة وعدالة.
             </p>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', gap: '15px', marginBottom: '40px' }}>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '40px' }}>
               <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>HTML</li>
               <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>CSS</li>
               <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>JavaScript</li>
