@@ -1,23 +1,24 @@
-.projectCard {
+/* --- التصميم الدائري الخاص بقسم التصاميم --- */
+.designCard {
   background-color: #2D3748;
   border-radius: 15px;
   padding: 20px;
-  display: flex; /* نستخدم Flexbox لتنظيم العناصر */
-  flex-direction: column; /* لترتيبها عموديًا */
-  gap: 15px; /* مسافة بين الأجزاء */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.projectCard:hover {
+.designCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
 .cardHeader, .cardFooter {
   display: flex;
-  justify-content: space-between; /* لوضع النصوص على الطرفين */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -33,19 +34,57 @@
   color: #A0AEC0;
 }
 
-.imageContainer {
+.circularImageContainer {
   width: 100%;
-  aspect-ratio: 1 / 1; /* يضمن أن الحاوية مربعة دائمًا */
+  aspect-ratio: 1 / 1;
   position: relative;
-  border-radius: 50%; /* هذا هو السطر الذي ينشئ الدائرة */
-  overflow: hidden; /* لإخفاء زوايا الصورة المربعة */
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .projectImage {
-  object-fit: cover; /* يجعل الصورة تملأ الدائرة بشكل جميل */
+  object-fit: cover;
 }
 
 .cardFooter span {
   font-size: 0.9rem;
+  color: #A0AEC0;
+}
+
+
+/* --- التصميم المستطيل الخاص بقسم الأعمال البرمجية --- */
+.codeCard {
+  background-color: #2D3748;
+  border-radius: 15px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.codeCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.rectangularImageContainer {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* نسبة 16:9 الاحترافية */
+  position: relative;
+}
+
+.cardContent {
+  padding: 20px;
+}
+
+.cardContent h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.cardContent p {
+  margin-bottom: 0;
   color: #A0AEC0;
 }
