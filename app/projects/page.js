@@ -42,62 +42,62 @@ const allProjects = [
   // --- التصاميم ---
   {
     id: 5,
-    title: 'أحداث في حياة النبي',
+    title: 'الدولة العباسية الأولى',
     image: '/images/1.webp',
     link: '/files/1.pdf',
     category: 'design',
     type: 'مطوية',
-    views: '1,500',
-    downloads: '750'
+    views: '1,350',
+    views: '1,000',
   },
   {
     id: 6,
-    title: 'تصميم إعلان سوشيال ميديا',
+    title: 'الدولة الأموية',
     image: '/images/2.webp',
     link: '/files/2.pdf',
     category: 'design',
-    type: 'تصميم',
+    type: 'مطوية',
     views: '2,100',
-    downloads: '980'
+    views: '1,152',
   },
   {
     id: 7,
-    title: 'مطوية إرشادية',
+    title: 'خلافة النبوة',
     image: '/images/3.webp',
     link: '/files/3.pdf',
     category: 'design',
     type: 'مطوية',
     views: '1,250',
-    downloads: '600'
+    views: '1,010',
   },
   {
     id: 8,
-    title: 'تصميم هوية بصرية',
+    title: 'مشجرة بني أمية',
     image: '/images/4.webp',
     link: '/files/4.pdf',
     category: 'design',
-    type: 'هوية بصرية',
-    views: '3,500',
+    type: 'مطوية',
+    views: '3,230',
     downloads: '1,200'
   },
   {
     id: 9,
-    title: 'غلاف كتاب',
+    title: 'مشجرة نسب النبي',
     image: '/images/5.webp',
     link: '/files/5.pdf',
     category: 'design',
-    type: 'تصميم',
-    views: '800',
-    downloads: '320'
+    type: 'مطوية',
+    views: '3,540',
+    downloads: '1,350'
   },
   {
     id: 10,
-    title: 'بطاقة عمل',
+    title: 'أحداث في حياة النبي',
     image: '/images/6.webp',
     link: '/files/6.pdf',
     category: 'design',
-    type: 'تصميم',
-    views: '1,900',
+    type: 'مطوية',
+    views: '2,900',
     downloads: '1,150'
   },
 ];
