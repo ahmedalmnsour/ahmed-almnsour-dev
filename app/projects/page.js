@@ -11,32 +11,29 @@ const allProjects = [
     description: 'حل هندسي متكامل لإدارة حصص الاحتياط في القطاع التعليمي.', 
     image: '/images/myzameel-screenshot.png',
     link: 'https://www.myzameel.com/',
-    category: 'code'
-  },
-  { 
-    id: 2, 
-    title: 'معرض المطويات التفاعلي', 
-    description: 'معرض ويب لعرض التصاميم والمطويات مع تأثيرات تفاعلية.',
-    image: '/images/placeholder.png',
-    link: '#', 
-    category: 'code'
+    category: 'code' // تصنيف المشروع كـ "برمجي"
   },
   {
-    id: 3,
-    title: 'تصميم مطوية تعليمية',
-    description: 'تصميم جرافيكي لمطوية إرشادية للطلاب.',
-    image: '/images/placeholder.png', 
-    link: '#', 
-    category: 'design'
+    id: 2,
+    title: 'أحداث في حياة النبي', // اسم المطوية
+    description: 'تصميم جرافيكي لمطوية إرشادية تلخص أحداثًا مهمة.',
+    image: '/images/1.webp', // صورة المعاينة المربعة
+    link: '/files/1.pdf', // ملف الـ PDF الأصلي
+    category: 'design', // تصنيف المشروع كـ "تصميم"
+    type: 'مطوية', // نوع التصميم
+    views: '1,500', // رقم وهمي للمشاهدات
+    downloads: '750' // رقم وهمي للتحميلات
   }
+  // يمكنك إضافة المزيد من المشاريع هنا بنفس الطريقة
 ];
 
 export default function ProjectsPage() {
-  // 1. تغيير الحالة الافتراضية إلى 'code' لتبدأ الصفحة بعرض الأعمال البرمجية
-  const [filter, setFilter] = useState('code');
+  // ... بقية الكود يبقى كما هو بدون تغيير ...
+  const [filter, setFilter] = useState('all');
 
-  // 2. تبسيط منطق الفلترة لأنه لم يعد لدينا خيار 'all'
-  const filteredProjects = allProjects.filter(p => p.category === filter);
+  const filteredProjects = filter === 'all' 
+    ? allProjects 
+    : allProjects.filter(p => p.category === filter);
 
   return (
     <main className="main-content">
@@ -47,7 +44,7 @@ export default function ProjectsPage() {
         </div>
 
         <div className={styles.filterButtons}>
-          {/* 3. حذف زر 'الكل' */}
+          <button onClick={() => setFilter('all')} className={filter === 'all' ? styles.active : ''}>الكل</button>
           <button onClick={() => setFilter('code')} className={filter === 'code' ? styles.active : ''}>أعمال برمجية</button>
           <button onClick={() => setFilter('design')} className={filter === 'design' ? styles.active : ''}>تصاميم</button>
         </div>
