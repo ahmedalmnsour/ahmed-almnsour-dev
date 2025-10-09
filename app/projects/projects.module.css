@@ -54,7 +54,6 @@
 /* شبكة عرض المشاريع المتجاوبة */
 .projectsGrid {
   display: grid;
-  /* هذا السطر هو سر التجاوب: سيقوم بإنشاء أعمدة تتسع لـ 350px، ويضيف أعمدة جديدة كلما اتسعت الشاشة */
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 30px;
 }
