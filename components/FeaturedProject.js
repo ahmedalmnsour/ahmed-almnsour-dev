@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // 1. استيراد مكون Link
 import styles from './FeaturedProject.module.css';
 
 export default function FeaturedProject() {
@@ -10,11 +11,9 @@ export default function FeaturedProject() {
       <div className={styles.maxWidthWrapper}>
 
         <div className={styles.sectionHeader}>
-          {/* --- تم تعديل العنوان الرئيسي هنا --- */}
           <h2 className={styles.sectionTitle}>
             آخر مشاريعي
           </h2>
-          {/* --- تم تعديل العنوان الفرعي هنا --- */}
           <p className={styles.sectionSubtitle}>
             نظرة على أحدث ما قمت ببنائه وتطبيق المهارات التقنية لحل مشكلة واقعية.
           </p>
@@ -27,19 +26,29 @@ export default function FeaturedProject() {
             <p style={{ lineHeight: '1.8', marginBottom: '30px', color: '#E2E8F0' }}>
               هي ليست مجرد منصة، بل حل هندسي متكامل لأزمة حقيقية في القطاع التعليمي. تم بناء زميلي لمواجهة تحدي إدارة حصص الاحتياط، معتمدًا على منطق برمجي ديناميكي يضمن توزيع الحصص بكفاءة وعدالة.
             </p>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '40px' }}>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '0' }}>
               <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>HTML</li>
               <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>CSS</li>
               <li style={{ backgroundColor: '#1A202C', padding: '5px 15px', borderRadius: '20px' }}>JavaScript</li>
             </ul>
-            <a 
-              href={projectUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              style={{ backgroundColor: '#007BFF', color: 'white', padding: '15px 30px', textDecoration: 'none', borderRadius: '8px', fontSize: '1rem', fontWeight: 'bold', display: 'inline-block' }}
-            >
-              عرض مباشر للمشروع
-            </a>
+
+            {/* 2. حاوية جديدة للأزرار */}
+            <div className={styles.buttonsContainer}>
+              <a 
+                href={projectUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ backgroundColor: '#007BFF', color: 'white', padding: '15px 30px', textDecoration: 'none', borderRadius: '8px', fontSize: '1rem', fontWeight: 'bold', display: 'inline-block' }}
+              >
+                عرض مباشر للمشروع
+              </a>
+
+              {/* 3. الرابط الجديد لصفحة كل المشاريع */}
+              <Link href="/projects" className={styles.viewAllLink}>
+                شاهد كل المشاريع ←
+              </Link>
+            </div>
+
           </div>
 
           <div className={styles.imageColumn}>

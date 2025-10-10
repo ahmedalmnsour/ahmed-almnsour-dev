@@ -19,23 +19,23 @@ const allProjects = [
     id: 2, 
     title: 'كودي - مولد الباركود', 
     description: 'تطبيق ويب لإنشاء وتخصيص رموز QR بشكل فوري وسهل.',
-    image: '/images/placeholder.png', // استخدم صورة مؤقتة
-    link: '#',
+    image: '/images/qrcodi.png',
+    link: 'https://www.qrcodi.me/',
     category: 'code'
   },
-  { 
+    { 
     id: 3, 
-    title: 'معرض الأعمال (هذا الموقع)', 
-    description: 'قريباً: سأكتب دراسة حالة عن كيفية بناء هذا الموقع باستخدام Next.js.',
-    image: '/images/placeholder.png',
+    title: 'اختبارات الثانوية التجريبية', 
+    description: 'قريباً: منصة تفاعلية لطلاب الثانوية العامة لأداء اختبارات تجريبية.',
+    image: '/images/quiz.png',
     link: '#',
     category: 'code'
   },
   { 
     id: 4, 
-    title: 'اختبارات الثانوية التجريبية', 
-    description: 'قريباً: منصة تفاعلية لطلاب الثانوية العامة لأداء اختبارات تجريبية.',
-    image: '/images/placeholder.png',
+    title: 'معرض الأعمال', 
+    description: 'قريباً: سأكتب دراسة حالة عن كيفية بناء هذا الموقع باستخدام Next.js.',
+    image: '/images/nextjs.png',
     link: '#',
     category: 'code'
   },
@@ -48,7 +48,7 @@ const allProjects = [
     category: 'design',
     type: 'مطوية',
     views: '1,350',
-    views: '1,000',
+    downloads: '1,000',
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ const allProjects = [
     category: 'design',
     type: 'مطوية',
     views: '2,100',
-    views: '1,152',
+    downloads: '1,152',
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const allProjects = [
     category: 'design',
     type: 'مطوية',
     views: '1,250',
-    views: '1,010',
+    downloads: '1,010',
   },
   {
     id: 8,

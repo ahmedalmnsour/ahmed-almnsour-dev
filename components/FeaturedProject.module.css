@@ -27,41 +27,63 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* عمودين متساويين على الشاشات الكبيرة */
+  grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
 }
 
 .textColumn {
   text-align: right;
-  /* سيتم عكس الترتيب في شاشة الجوال */
   order: 2;
 }
 
 .imageColumn {
   width: 100%;
-  /* سيتم عكس الترتيب في شاشة الجوال */
   order: 1;
 }
 
 .projectImage {
   width: 100%;
-  height: auto; /* للحفاظ على أبعاد الصورة */
+  height: auto;
   border-radius: 15px;
   display: block;
 }
 
-/* هذا هو الكود السحري للتجاوب مع الجوال */
+/* --- الأكواد الجديدة --- */
+.buttonsContainer {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column; /* لترتيب الأزرار فوق بعضها */
+  align-items: flex-start; /* لمحاذاة العناصر لليمين */
+  gap: 20px; /* مسافة بين زر العرض ورابط المزيد */
+}
+
+.viewAllLink {
+  color: #A0AEC0;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.viewAllLink:hover {
+  color: #007BFF; /* يتغير اللون للأزرق عند المرور */
+}
+/* --- نهاية الأكواد الجديدة --- */
+
 @media (max-width: 768px) {
   .gridContainer {
-    grid-template-columns: 1fr; /* يتحول إلى عمود واحد فقط */
+    grid-template-columns: 1fr;
   }
 
   .textColumn {
-    order: 2; /* النص يظهر ثانيًا (تحت الصورة) */
+    order: 2;
   }
 
   .imageColumn {
-    order: 1; /* الصورة تظهر أولاً (فوق النص) */
+    order: 1;
+  }
+
+  .buttonsContainer {
+    align-items: center; /* توسيط الأزرار في شاشة الجوال */
   }
 }
