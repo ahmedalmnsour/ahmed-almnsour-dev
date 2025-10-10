@@ -1,10 +1,16 @@
-"use client";
+"use client"; // هذا المكون أصبح تفاعليًا
 
 import React, { useState } from 'react';
+import Link from 'next/link';
+// 1. استيراد "Hook" جديد من Next.js لمعرفة المسار الحالي
+import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // 2. نحصل على المسار الحالي للصفحة (سيكون إما "/" أو "/projects")
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,21 +20,32 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  // 3. بناء اسم الكلاس ديناميكيًا لرابط "أعمالي"
+  // إذا كنا في صفحة /projects، أضف كلاس "activeLink"
+  const projectsLinkClassName = `${styles.navLink} ${pathname === '/projects' ? styles.activeLink : ''}`;
+
   return (
     <header className={styles.navbar}>
-      {/* --- هذا هو التعديل الوحيد والمهم --- */}
-      {/* تم تغيير الوسم <a> إلى <div> لإلغاء الرابط */}
-      <div className={styles.logo}>
+      {/* هذا الرابط دائمًا يعود للرئيسية */}
+      <Link href="/#home" className={styles.logo} onClick={handleLinkClick}>
         Ahmed.Almnsour.dev
-      </div>
+      </Link>
       
       <nav>
         <ul className={isMenuOpen ? `${styles.navLinks} ${styles.active}` : styles.navLinks}>
-          <li className={styles.navLink}><a href="#home" onClick={handleLinkClick}>الرئيسية</a></li>
-          <li className={styles.navLink}><a href="#about" onClick={handleLinkClick}>نبذة عني</a></li>
-          <li className={styles.navLink}><a href="#project" onClick={handleLinkClick}>أعمالي</a></li>
-          <li className={styles.navLink}><a href="#skills" onClick={handleLinkClick}>المهارات</a></li>
-          <li className={styles.navLink}><a href="#contact" onClick={handleLinkClick}>اتصل بي</a></li>
+          
+          {/* الروابط التالية دائمًا تعود لأقسام الصفحة الرئيسية */}
+          <li className={styles.navLink}><Link href="/#home" onClick={handleLinkClick}>الرئيسية</Link></li>
+          <li className={styles.navLink}><Link href="/#about" onClick={handleLinkClick}>نبذة عني</Link></li>
+
+          {/* رابط "أعمالي" هو الوحيد الذي يذهب لصفحة مستقلة */}
+          <li className={projectsLinkClassName}>
+            <Link href="/projects" onClick={handleLinkClick}>أعمالي</Link>
+          </li>
+          
+          <li className={styles.navLink}><Link href="/#skills" onClick={handleLinkClick}>المهارات</Link></li>
+          <li className={styles.navLink}><Link href="/#contact" onClick={handleLinkClick}>اتصل بي</Link></li>
+
         </ul>
       </nav>
       <div className={styles.menuIcon} onClick={toggleMenu}>
