@@ -39,7 +39,8 @@ export default function ProjectCard({ project }) {
       setDisplayViews(calculateDynamicCount(project.views, 2));
       setDisplayDownloads(calculateDynamicCount(project.downloads, 5));
     }
-  }, []);
+    // --- هذا هو السطر الذي تم تصحيحه ---
+  }, [project.category, project.views, project.downloads]);
 
   // ... (بقية كود العرض يبقى كما هو بدون تغيير) ...
 
