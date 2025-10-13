@@ -1,0 +1,58 @@
+/* --- components/ContactSection.module.css --- */
+
+.sectionContainer {
+  padding: 80px 20px;
+  background-color: #2D3748; /* لون مختلف قليلاً للتمييز */
+  text-align: center;
+}
+
+.maxWidthWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #A0AEC0;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+/* --- Final Icon Styles --- */
+
+/* تنسيق الحاوية للروابط */
+.socialLinks {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* تنسيق الرابط الحاوي للأيقونة (<a>) */
+.socialIcon {
+  display: inline-flex;   /* نستخدم flex لتوسيط الأيقونة بالداخل */
+  align-items: center;     /* توسيط عمودي مثالي */
+  justify-content: center;  /* توسيط أفقي مثالي */
+  text-decoration: none;
+  color: #A0AEC0;          /* اللون الأساسي للرابط (وبالتالي الأيقونة) */
+  transition: color 0.2s, transform 0.2s;
+}
+
+/* تنسيق الأيقونة نفسها (سواء كانت <span> أو <svg>) */
+.socialIcon span,
+.socialIcon svg {
+  font-size: 36px;  /* حجم أيقونة الخط */
+  width: 36px;      /* عرض أيقونة SVG */
+  height: 36px;     /* طول أيقونة SVG */
+}
+
+/* تنسيق حالة مرور الماوس على الرابط */
+.socialIcon:hover {
+  color: #007BFF;          /* تغيير لون الرابط (والأيقونة) */
+  transform: translateY(-5px); /* تحريك الرابط بأكمله للأعلى */
+}
