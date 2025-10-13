@@ -1,0 +1,51 @@
+/* HeroSection.module.css */
+
+.heroContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px; /* لإضافة هوامش جانبية على الشاشات الصغيرة */
+}
+
+.mainTitle {
+  font-size: clamp(1.8rem, 8vw, 4rem); /* حجم الخط على الشاشات الكبيرة */
+  margin: 0;
+  color: white;
+  word-break: break-all; /* للأمان، يسمح بكسر الكلمة إذا كانت أطول من الشاشة */
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #E2E8F0;
+  margin-top: 10px;
+}
+
+.slogan {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+/* للجوال */
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 2rem; /* غيّر هذا الرقم للتكبير/التصغير */
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 1.8rem; /* غيّر هذا الرقم للتكبير/التصغير */
+  }
+}
+
+.codeIcon {
+  vertical-align: middle;
+  font-size: inherit;
+}

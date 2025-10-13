@@ -1,0 +1,55 @@
+/* not-found.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* نستخدم calc لطرح ارتفاع النافبار والفوتر بشكل تقريبي */
+  min-height: calc(100vh - 150px);
+  text-align: center;
+  padding: 20px;
+}
+
+.icon {
+  font-size: 60px;
+  color: #718096;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: #E2E8F0;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #A0AEC0;
+  max-width: 500px;
+  line-height: 1.7;
+  margin: 20px 0 40px 0;
+}
+
+.homeButton {
+  background-color: #007BFF;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.homeButton:hover {
+  transform: scale(1.05);
+}
+
+/* --- التنسيق الجديد للعداد --- */
+.countdownText {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #718096; /* لون باهت */
+}

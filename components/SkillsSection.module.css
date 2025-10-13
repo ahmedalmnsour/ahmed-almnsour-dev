@@ -1,0 +1,41 @@
+/* SkillsSection.module.css */
+
+.sectionContainer {
+  padding: 80px 20px;
+  background-color: #1A202C; /* نفس لون الخلفية الأساسية */
+  text-align: center;
+}
+
+.maxWidthWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* يسمح للعناصر بالنزول لسطر جديد على الشاشات الصغيرة */
+  justify-content: center;
+  gap: 20px; /* المسافة بين بطاقات المهارات */
+}
+
+.skillBadge {
+  background-color: #2D3748; /* لون أغمق قليلاً */
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+.skillBadge:hover {
+  background-color: #007BFF; /* يتغير اللون عند مرور الماوس */
+  transform: translateY(-5px); /* تأثير بسيط عند المرور */
+  cursor: default;
+}
