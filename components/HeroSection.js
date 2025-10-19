@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from './HeroSection.module.css';
+// 1. استيراد أيقونة الكود من react-icons/fa
+import { FaCode } from 'react-icons/fa';
+
 export default function HeroSection() {
   return (
     <div id="home" className={styles.heroContainer}>
@@ -7,10 +10,9 @@ export default function HeroSection() {
       <p className={styles.subtitle}>مُطوِّر برمجيات</p>
       <p className={styles.slogan}>
         <strong>
-          أُحَوِّل القهوةَ ☕ إلى كود 
-          <span className={`material-symbols-outlined ${styles.codeIcon}`}>
-            code
-          </span>
+          أُحَوِّل القهوةَ ☕ إلى كود{' '} {/* إضافة مسافة صغيرة */}
+          {/* 2. استخدام أيقونة الكود الجديدة هنا */}
+          <FaCode style={{ verticalAlign: 'middle' }} /> {/* إضافة تنسيق بسيط للمحاذاة */}
         </strong>
       </p>
     </div>
