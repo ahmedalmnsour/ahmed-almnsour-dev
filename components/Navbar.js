@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
+// 1. تم استيراد الأيقونات الجديدة من react-icons/hi
+import { HiMenu, HiX } from 'react-icons/hi';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,10 +34,9 @@ export default function Navbar() {
 
         </ul>
       </nav>
+      {/* 2. تم استبدال الوسم <span> بالأيقونات الجديدة هنا */}
       <div className={styles.menuIcon} onClick={toggleMenu}>
-        <span className="material-symbols-outlined">
-          {isMenuOpen ? 'close' : 'menu'}
-        </span>
+        {isMenuOpen ? <HiX /> : <HiMenu />}
       </div>
     </header>
   );

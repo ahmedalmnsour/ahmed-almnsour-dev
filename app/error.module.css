@@ -10,11 +10,15 @@
   padding: 20px;
 }
 
-.icon {
-  font-size: 60px;
-  color: #718096;
-  margin-bottom: 20px;
+/* --- تم تعديل هذه القاعدة --- */
+.icon svg { /* استهداف svg داخل الحاوية */
+  font-size: 60px; /* لن يؤثر هذا كثيرًا على SVG */
+  width: 60px;     /* تحديد العرض */
+  height: 60px;    /* تحديد الطول */
+  color: #718096; /* لون باهت قليلاً */
+  margin-bottom: 20px; /* أبقينا على الهامش السفلي */
 }
+/* --- نهاية التعديل --- */
 
 .title {
   font-size: 3rem;

@@ -2,19 +2,19 @@
 
 import Link from 'next/link';
 import styles from './error.module.css';
+// 1. Import the new icon from react-icons/vsc
+import { VscBug } from 'react-icons/vsc';
 
 export default function Error({ error, reset }) {
   return (
     <div className={styles.container}>
+      {/* 2. Replace <span> with the new icon component */}
       <div className={styles.icon}>
-        <span className="material-symbols-outlined" style={{ fontSize: '60px' }}>
-          bug_report
-        </span>
+        <VscBug />
       </div>
 
       <h1 className={styles.title}>500: خطأ في النظام</h1>
 
-      {/* تم إزالة علامات التنصيص من حول كلمة bug هنا */}
       <p className={styles.subtitle}>
         عذرًا، حدث خطأ غير متوقع. يبدو أن هناك bug صغير تسلل إلى الكود بينما كنت أُعد القهوة. لقد تم إبلاغي بالمشكلة تلقائيًا، ويمكنك محاولة تحديث الصفحة أو العودة بأمان إلى الصفحة الرئيسية.
       </p>

@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import styles from './not-found.module.css';
+// 1. تم استيراد الأيقونة الجديدة من react-icons/tb
+import { TbCodeOff } from 'react-icons/tb';
 
 export default function NotFound() {
   const [countdown, setCountdown] = useState(10);
@@ -24,10 +26,9 @@ export default function NotFound() {
 
   return (
     <div className={styles.container}>
+      {/* 2. تم استبدال <span> بالأيقونة الجديدة هنا */}
       <div className={styles.icon}>
-        <span className="material-symbols-outlined" style={{ fontSize: '60px' }}>
-          code_off
-        </span>
+        <TbCodeOff />
       </div>
 
       <h1 className={styles.title}>404: null</h1>
