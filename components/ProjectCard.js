@@ -17,33 +17,27 @@ export default function ProjectCard({ project }) {
         if (isNaN(baseNumber)) return baseString;
 
         // --- المنطق الجديد للزيادة المستمرة ---
-
-        // 1. نحدد تاريخ إطلاق ثابت للمشروع (يمكنك تغييره)
-        // الصيغة: السنة، الشهر (يبدأ من 0)، اليوم
         const launchDate = new Date(2025, 9, 9); // 9 أكتوبر 2025
-
         const now = new Date();
         const timeElapsedInHours = (now.getTime() - launchDate.getTime()) / (1000 * 60 * 60);
 
-        if (timeElapsedInHours < 0) return baseString; // إذا كان تاريخ الإطلاق في المستقبل
+        if (timeElapsedInHours < 0) return baseString; 
 
-        // 2. نحسب كم مرة حدثت الزيادة
         const increments = Math.floor(timeElapsedInHours / hoursPerIncrement);
-
         const finalCount = baseNumber + increments;
         
         return finalCount.toLocaleString('en-US');
       };
 
-      // 3. نطبق المعادلة: المشاهدات تزيد 1 كل ساعتين، والتحميلات تزيد 1 كل 5 ساعات
       setDisplayViews(calculateDynamicCount(project.views, 2));
       setDisplayDownloads(calculateDynamicCount(project.downloads, 5));
     }
-    // --- هذا هو السطر الذي تم تصحيحه ---
   }, [project.category, project.views, project.downloads]);
 
-  // ... (بقية كود العرض يبقى كما هو بدون تغيير) ...
 
+  // ---------------------------------------------------------
+  // 1. حالة التصاميم (كما هي لم تتغير)
+  // ---------------------------------------------------------
   if (project.category === 'design') {
     return (
       <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.designCard}>
@@ -67,6 +61,9 @@ export default function ProjectCard({ project }) {
     );
   }
 
+  // ---------------------------------------------------------
+  // 2. حالة الأعمال البرمجية (هنا أضفنا السحر ✨)
+  // ---------------------------------------------------------
   return (
     <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.codeCard}>
       <div className={styles.rectangularImageContainer}>
@@ -75,9 +72,31 @@ export default function ProjectCard({ project }) {
           alt={project.title}
           fill
           className={styles.projectImage}
+          // إذا كان المشروع مغلقاً، نجعل الصورة رمادية قليلاً لتعطي انطباع "الأرشيف"
+          style={project.status === 'closed' ? { filter: 'grayscale(100%) opacity(0.8)' } : {}}
         />
+        
+        {/* --- إضافة الشارة فوق الصورة (اختياري) --- */}
+        {project.status === 'soon' && (
+           <span style={{
+             position: 'absolute', top: '10px', left: '10px', 
+             backgroundColor: '#D69E2E', color: '#fff', 
+             padding: '4px 8px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 'bold', zIndex: 10
+           }}>قريباً</span>
+        )}
       </div>
+
       <div className={styles.cardContent}>
+        {/* --- منطقة الشارات بجانب العنوان --- */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+            {project.status === 'beta' && (
+                <span style={{ backgroundColor: '#3182CE', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem' }}>نسخة تجريبية</span>
+            )}
+            {project.status === 'closed' && (
+                <span style={{ backgroundColor: '#4A5568', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem' }}>مغلق (Enterprise)</span>
+            )}
+        </div>
+
         <h3>{project.title}</h3>
         <p>{project.description}</p>
       </div>

@@ -7,7 +7,8 @@ const skills = [
   'JavaScript',
   'React',
   'Next.js',
-  'Material Design'
+  'Material Design',
+  'Python'
 ];
 
 export default function SkillsSection() {

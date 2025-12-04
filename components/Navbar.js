@@ -19,17 +19,18 @@ export default function Navbar() {
 
   return (
     <header className={styles.navbar}>
-      <Link href="/#home" className={styles.logo} onClick={handleLinkClick}>
-        Ahmed.Almnsour.dev
-      </Link>
-      
+      <div className={styles.logo}>
+      Ahmed.Almnsour.dev
+        </div>
+     
       <nav>
         <ul className={isMenuOpen ? `${styles.navLinks} ${styles.active}` : styles.navLinks}>
-          
+         
           <li className={styles.navLink}><Link href="/#home" onClick={handleLinkClick}>الرئيسية</Link></li>
           <li className={styles.navLink}><Link href="/#about" onClick={handleLinkClick}>نبذة عني</Link></li>
           <li className={styles.navLink}><Link href="/#project" onClick={handleLinkClick}>أعمالي</Link></li>
           <li className={styles.navLink}><Link href="/#skills" onClick={handleLinkClick}>المهارات</Link></li>
+          <li className={styles.navLink}><Link href="/#articles" onClick={handleLinkClick}>المعمل</Link></li>
           <li className={styles.navLink}><Link href="/#contact" onClick={handleLinkClick}>اتصل بي</Link></li>
 
         </ul>

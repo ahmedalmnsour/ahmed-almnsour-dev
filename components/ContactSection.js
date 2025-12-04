@@ -6,7 +6,7 @@ import styles from './ContactSection.module.css';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 export default function ContactSection() {
-  const yourEmail = "almnsour.ahmed@hotmail.com";
+  const yourEmail = "almnsour.ahmed@gmail.com";
   const whatsappUrl = "https://wa.me/96597311821";
 
   return (

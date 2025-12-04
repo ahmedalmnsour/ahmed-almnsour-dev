@@ -1,20 +1,28 @@
 import React from 'react';
 import styles from './HeroSection.module.css';
-// 1. استيراد أيقونة الكود من react-icons/fa
 import { FaCode } from 'react-icons/fa';
 
 export default function HeroSection() {
   return (
-    <div id="home" className={styles.heroContainer}>
+    // 1. إضافة لون خلفية صريح هنا ليراه WAVE ويحسب التباين بشكل صحيح
+    <div id="home" className={styles.heroContainer} style={{ backgroundColor: '#171923' }}>
+      
+      {/* الاسم هو العنوان الرئيسي */}
       <h1 className={styles.mainTitle}>أحمد المنصور</h1>
-      <p className={styles.subtitle}>مُطوِّر برمجيات</p>
-      <p className={styles.slogan}>
+      
+      {/* 2. تغيير المسمى الوظيفي إلى H2 (لإصلاح تنبيه العنوان المحتمل) */}
+      <h2 className={styles.subtitle} style={{ color: '#E2E8F0', fontSize: '1.5rem', fontWeight: 'normal' }}>
+        مُطوِّر برمجيات
+      </h2>
+
+      {/* 3. الشعار يكون H3 (تسلسل منطقي) مع الحفاظ على التنسيق */}
+      <h3 className={styles.slogan} style={{ color: '#CBD5E0', fontWeight: 'normal', fontSize: '1.2rem' }}>
         <strong>
-          أُحَوِّل القهوةَ ☕ إلى كود{' '} {/* إضافة مسافة صغيرة */}
-          {/* 2. استخدام أيقونة الكود الجديدة هنا */}
-          <FaCode style={{ verticalAlign: 'middle' }} /> {/* إضافة تنسيق بسيط للمحاذاة */}
+          أُحَوِّل القهوةَ ☕ إلى كود{' '}
+          <FaCode style={{ verticalAlign: 'middle' }} />
         </strong>
-      </p>
+      </h3>
+      
     </div>
   );
 }
