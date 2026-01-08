@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import styles from './not-found.module.css';
+import { CodeOffIcon } from '@/components/Icons';
 
 export default function NotFound() {
   const [countdown, setCountdown] = useState(10);
@@ -24,20 +25,19 @@ export default function NotFound() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.icon}>
-        <span className="material-symbols-outlined" style={{ fontSize: '60px' }}>
-          code_off
-        </span>
+      
+      <div className={styles.iconWrapper}>
+        <CodeOffIcon />
       </div>
 
       <h1 className={styles.title}>404: null</h1>
 
       <p className={styles.subtitle}>
-        {/* --- تم تصحيح الكلمة هنا --- */}
         يبدو أنك سلكت طريقًا غير موجود في الكود المصدري لهذا الموقع. دعنا نعيدك للصفحة الرئيسية قبل أن تبرد القهوة ☕
       </p>
 
-      <Link href="/" className={styles.homeButton}>
+      {/* 👇 التعديل هنا: إضافة prefetch={false} */}
+      <Link href="/" className={styles.homeButton} prefetch={false}>
         العودة إلى الصفحة الرئيسية
       </Link>
 

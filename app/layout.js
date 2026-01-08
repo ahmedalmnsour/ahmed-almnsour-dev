@@ -1,39 +1,40 @@
-import { Tajawal } from 'next/font/google';
+import localFont from 'next/font/local';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import DeveloperSignature from '@/components/DeveloperSignature';
 import './globals.css';
 
-const tajawal = Tajawal({
-  subsets: ['arabic'],
-  weight: ['400', '700'],
-  display: 'swap', // <-- 1. تم إضافة هذا السطر لتحسين تحميل الخط الرئيسي
+const tajawal = localFont({
+  src: [
+    { path: '../public/fonts/Tajawal-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/Tajawal-Medium.woff2', weight: '500', style: 'normal' },
+    { path: '../public/fonts/Tajawal-Bold.woff2', weight: '700', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-tajawal',
+  preload: true,
 });
 
 export const metadata = {
+  metadataBase: new URL('https://ahmed.almnsour.net'),
   title: 'Ahmed Almnsour - Software Developer',
-  description: 'The personal portfolio for Ahmed Almnsour, a software developer specializing in modern web technologies like React and Next.js.',
+  description: 'The personal portfolio for Ahmed Almnsour.',
+  icons: { icon: '/icon.svg' },
 };
 
 export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
+  themeColor: '#171923',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* 2. تم إضافة &display=optional هنا لإصلاح التحذير */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=optional"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={tajawal.className}>
+      <body className={tajawal.variable}>
+        <DeveloperSignature />
         <Navbar />
-        {children}
+        <main className="main-content">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

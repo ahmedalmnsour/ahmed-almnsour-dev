@@ -1,4 +1,6 @@
-/* --- التصميم الدائري الخاص بقسم التصاميم --- */
+/* ProjectCard.module.css */
+
+/* --- 1. بطاقة التصميم (Design) --- */
 .designCard {
   background-color: #2D3748;
   border-radius: 15px;
@@ -9,28 +11,24 @@
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid #4A5568;
 }
 
 .designCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  border-color: #718096;
 }
 
-.cardHeader, .cardFooter {
+.cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.cardHeader h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: white;
-}
-
-.cardHeader span {
-  font-size: 0.9rem;
+.projectType {
+  font-size: 0.8rem;
   color: #A0AEC0;
 }
 
@@ -40,19 +38,10 @@
   position: relative;
   border-radius: 50%;
   overflow: hidden;
+  border: 2px solid #4A5568;
 }
 
-.projectImage {
-  object-fit: cover;
-}
-
-.cardFooter span {
-  font-size: 0.9rem;
-  color: #A0AEC0;
-}
-
-
-/* --- التصميم المستطيل الخاص بقسم الأعمال البرمجية --- */
+/* --- 2. بطاقة البرمجة (Code) --- */
 .codeCard {
   background-color: #2D3748;
   border-radius: 15px;
@@ -61,30 +50,85 @@
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid #4A5568;
+  position: relative;
 }
 
 .codeCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  border-color: #718096;
 }
 
 .rectangularImageContainer {
   width: 100%;
-  aspect-ratio: 16 / 9; /* نسبة 16:9 الاحترافية */
+  aspect-ratio: 16 / 9;
   position: relative;
 }
 
+.projectImage {
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* الفلتر الرمادي للمشاريع المغلقة */
+.imageGrayscale {
+  filter: grayscale(100%) opacity(0.8);
+}
+
+/* --- المحتوى والنصوص --- */
 .cardContent {
   padding: 20px;
 }
 
-.cardContent h3 {
-  margin-top: 0;
-  font-size: 1.5rem;
+.cardTitle {
+  margin: 0;
+  font-size: 1.3rem;
   color: white;
+  margin-bottom: 0.5rem;
 }
 
-.cardContent p {
-  margin-bottom: 0;
-  color: #A0AEC0;
+.cardDescription {
+  margin: 0;
+  color: #CBD5E0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- الشارات (Badges) --- */
+.statusWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  min-height: 20px; /* لحفظ المكان حتى لو فارغ */
+}
+
+.badgeSoon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #D69E2E; /* برتقالي */
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.badgeBeta {
+  background-color: #3182CE; /* أزرق */
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.badgeClosed {
+  background-color: #4A5568; /* رمادي */
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
 }

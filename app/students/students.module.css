@@ -1,0 +1,54 @@
+/* students.module.css */
+
+.studentsSection {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 80vh; /* لضمان توسط المحتوى في الشاشة */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-tajawal), sans-serif;
+}
+
+.container {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #E2E8F0;
+}
+
+.message {
+  font-size: 1.5rem;
+  color: #63B3ED; /* لون أزرق مريح للعين */
+  font-weight: bold;
+}
+
+/* تنسيق زر العودة */
+.footer {
+  margin-top: 20px;
+}
+
+.backButton {
+  display: inline-block;
+  padding: 15px 50px;
+  background-color: transparent;
+  color: #A0AEC0;
+  border: 2px solid #4A5568;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  border-color: #E2E8F0;
+  color: #E2E8F0;
+  transform: translateY(-3px);
+}

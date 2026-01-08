@@ -1,31 +1,32 @@
-/* --- components/ContactSection.module.css --- */
+/* components/ContactSection.module.css */
 
-.sectionContainer {
+.section {
   padding: 80px 20px;
-  background-color: #2D3748; /* لون مختلف قليلاً للتمييز */
+  background-color: #2D3748; /* نفس الخلفية الداكنة */
   text-align: center;
+  border-top: 1px solid #4A5568; /* فاصل خفيف */
 }
 
-.maxWidthWrapper {
+.container {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.sectionTitle {
+.title {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #E2E8F0;
+  font-weight: 700;
 }
 
-.sectionSubtitle {
+.subtitle {
   font-size: 1.2rem;
   color: #A0AEC0;
   margin-bottom: 40px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-/* --- Final Icon Styles --- */
-
-/* تنسيق الحاوية للروابط */
+/* روابط التواصل */
 .socialLinks {
   margin-top: 40px;
   display: flex;
@@ -33,26 +34,39 @@
   gap: 40px;
 }
 
-/* تنسيق الرابط الحاوي للأيقونة (<a>) */
 .socialIcon {
-  display: inline-flex;   /* نستخدم flex لتوسيط الأيقونة بالداخل */
-  align-items: center;     /* توسيط عمودي مثالي */
-  justify-content: center;  /* توسيط أفقي مثالي */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  color: #A0AEC0;          /* اللون الأساسي للرابط (وبالتالي الأيقونة) */
-  transition: color 0.2s, transform 0.2s;
+  color: #A0AEC0;
+  transition: all 0.2s ease-in-out;
+  padding: 10px; /* لزيادة مساحة الضغط */
 }
 
-/* تنسيق الأيقونة نفسها (سواء كانت <span> أو <svg>) */
-.socialIcon span,
+/* التحكم بحجم الأيقونة SVG */
 .socialIcon svg {
-  font-size: 36px;  /* حجم أيقونة الخط */
-  width: 36px;      /* عرض أيقونة SVG */
-  height: 36px;     /* طول أيقونة SVG */
+  width: 40px; /* حجم موحد */
+  height: 40px;
 }
 
-/* تنسيق حالة مرور الماوس على الرابط */
+/* حالة التحويم */
 .socialIcon:hover {
-  color: #007BFF;          /* تغيير لون الرابط (والأيقونة) */
-  transform: translateY(-5px); /* تحريك الرابط بأكمله للأعلى */
+  color: #3182CE; /* الأزرق الموحد في المشروع */
+  transform: translateY(-5px);
+}
+
+/* --- للجوال --- */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .socialLinks {
+    gap: 30px;
+  }
 }

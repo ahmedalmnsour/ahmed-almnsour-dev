@@ -1,0 +1,166 @@
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { articlesData } from '@/data/articles';
+import { notFound } from 'next/navigation';
+import VideoPlayer from '@/components/VideoPlayer';
+import styles from './article.module.css';
+
+
+const siteUrl = 'https://ahmed.almnsour.net';
+
+
+export async function generateStaticParams() {
+  return articlesData.map((article) => ({
+    id: article.id.toString(),
+  }));
+}
+
+// --- Metadata ---
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const article = articlesData.find((p) => p.id.toString() === id);
+  if (!article) return { title: 'المقال غير موجود' };
+
+  const imagePath = article.ogImage || article.image;
+  let ogImageUrl;
+
+  if (imagePath) {
+    const cleanPath = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+    ogImageUrl = `${siteUrl}${cleanPath}`;
+  } else if (article.videoId) {
+    ogImageUrl = `https://i.ytimg.com/vi/${article.videoId}/maxresdefault.jpg`;
+  }
+
+  return {
+    title: article.title,
+    description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `${siteUrl}/articles/${id}`,
+      siteName: 'Ahmed Almnsour - Software Developer',
+      images: ogImageUrl ? [{ url: ogImageUrl, width: 1200, height: 630, alt: article.title }] : [],
+      locale: 'ar_SA',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: ogImageUrl ? [ogImageUrl] : [],
+    },
+  };
+}
+
+// --- مكون الصفحة ---
+export default async function ArticlePage({ params }) {
+  const { id } = await params;
+  const article = articlesData.find((p) => p.id.toString() === id);
+  if (!article) notFound();
+
+  const hasVideo = article.content.includes('[[VIDEO_PLACEHOLDER]]') && article.videoId;
+  let contentParts = [article.content];
+  if (hasVideo) {
+    contentParts = article.content.split('[[VIDEO_PLACEHOLDER]]');
+  }
+
+  // --- Schema Markup ---
+  let schemaImage = article.ogImage || article.image;
+  if (schemaImage && !schemaImage.startsWith('http')) {
+      schemaImage = `${siteUrl}${schemaImage.startsWith('/') ? schemaImage : '/' + schemaImage}`;
+  } else if (article.videoId) {
+      schemaImage = `https://i.ytimg.com/vi/${article.videoId}/maxresdefault.jpg`;
+  }
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.excerpt,
+    image: schemaImage ? [schemaImage] : [],
+    author: {
+      '@type': 'Person',
+      name: 'Ahmed Almnsour',
+      url: siteUrl
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/articles/${id}`,
+    },
+  };
+
+  if (article.videoId) {
+    jsonLd.video = {
+      '@type': 'VideoObject',
+      name: article.videoTitle || article.title,
+      description: article.excerpt,
+      thumbnailUrl: `https://i.ytimg.com/vi/${article.videoId}/maxresdefault.jpg`,
+      uploadDate: new Date().toISOString(),
+      contentUrl: `https://www.youtube.com/watch?v=${article.videoId}`,
+      embedUrl: `https://www.youtube.com/embed/${article.videoId}`,
+    };
+  }
+
+  return (
+    <main className={styles.main}>
+      
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* 1. Header & Image */}
+      <div className={styles.headerContainer}>
+        {article.image && (
+            <Image 
+            src={article.image} 
+            alt={article.title} 
+            fill 
+            sizes="100vw"
+            className={styles.headerImage}
+            priority
+          />
+        )}
+        <div className={styles.headerOverlay}>
+          <div className={styles.headerContent}>
+            <span className={styles.categoryLabel}>
+              {article.categoryLabel}
+            </span>
+            <h1 className={styles.title}>{article.title}</h1>
+            <div className={styles.date}>
+               📅   {article.date}
+             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. Content */}
+      <article className={styles.articleBox}>
+        
+        {!hasVideo ? (
+           <div className={styles.contentBody} dangerouslySetInnerHTML={{ __html: article.content }} />
+        ) : (
+          <>
+            <div className={styles.contentBody} dangerouslySetInnerHTML={{ __html: contentParts[0] }} />
+            <VideoPlayer 
+                videoId={article.videoId} 
+                title={article.videoTitle || article.title} 
+            />
+            <div className={styles.contentBody} dangerouslySetInnerHTML={{ __html: contentParts[1] }} />
+          </>
+        )}
+
+        <div className={styles.footerLinkWrapper}>
+           {/* 👇 التعديل هنا: إضافة prefetch={false} */}
+           <Link href="/articles" className={styles.backLink} prefetch={false}>
+             <span>&larr;</span> العودة للأرشيف الكامل
+           </Link>
+        </div>
+
+      </article>
+
+    </main>
+  );
+}

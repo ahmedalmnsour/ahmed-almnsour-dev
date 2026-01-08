@@ -1,41 +1,61 @@
 /* SkillsSection.module.css */
 
-.sectionContainer {
-  padding: 80px 20px;
-  background-color: #1A202C; /* نفس لون الخلفية الأساسية */
+.section {
+  padding: 4rem 2rem;
+  background-color: #1A202C;
   text-align: center;
+  border-top: 1px solid #2D3748; /* فاصل خفيف */
 }
 
-.maxWidthWrapper {
+.container {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.sectionTitle {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
+.title {
+  font-size: 2rem; /* حجم مناسب للجوال */
+  font-weight: 700;
+  color: #E2E8F0;
+  margin-bottom: 3rem;
 }
 
-.skillsList {
+.list {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
-  flex-wrap: wrap; /* يسمح للعناصر بالنزول لسطر جديد على الشاشات الصغيرة */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* المسافة بين بطاقات المهارات */
+  gap: 1.5rem; /* مسافة مريحة بين البطاقات */
 }
 
-.skillBadge {
-  background-color: #2D3748; /* لون أغمق قليلاً */
+.badge {
+  background-color: #2D3748;
+  color: #CBD5E0;
   padding: 12px 25px;
   border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: transform 0.2s ease-in-out, background-color 0.2s;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #4A5568; /* إطار خفيف للبروز */
+  transition: all 0.2s ease-in-out;
+  cursor: default;
 }
 
-.skillBadge:hover {
-  background-color: #007BFF; /* يتغير اللون عند مرور الماوس */
-  transform: translateY(-5px); /* تأثير بسيط عند المرور */
-  cursor: default;
+.badge:hover {
+  background-color: #3182CE; /* نفس درجة الأزرق المستخدمة في باقي الموقع */
+  border-color: #3182CE;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+/* --- للشاشات الكبيرة --- */
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .badge {
+    font-size: 1.1rem;
+  }
 }

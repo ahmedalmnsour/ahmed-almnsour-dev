@@ -5,39 +5,49 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px); /* ارتفاع مناسب يخصم الهيدر والفوتر تقريباً */
   text-align: center;
   padding: 20px;
+  font-family: var(--font-tajawal), sans-serif;
 }
 
-.icon {
-  font-size: 60px;
+/* حاوية الأيقونة */
+.iconWrapper {
   color: #718096;
   margin-bottom: 20px;
+}
+
+/* تنسيق SVG */
+.iconWrapper svg {
+  width: 60px;
+  height: 60px;
 }
 
 .title {
   font-size: 3rem;
   color: #E2E8F0;
   margin: 0;
+  font-weight: 700;
 }
 
 .subtitle {
   font-size: 1.2rem;
   color: #A0AEC0;
-  max-width: 500px;
+  max-width: 600px;
   line-height: 1.7;
   margin: 20px 0 40px 0;
 }
 
 .buttonsContainer {
   display: flex;
-  gap: 20px; /* مسافة بين الزرين */
+  gap: 20px;
   align-items: center;
+  flex-wrap: wrap; /* للجوال */
+  justify-content: center;
 }
 
 .primaryButton {
-  background-color: #007BFF;
+  background: linear-gradient(90deg, #3182CE, #63B3ED); /* الأزرق المعتمد */
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -45,25 +55,29 @@
   font-size: 1rem;
   font-weight: bold;
   transition: transform 0.2s;
+  border: none;
 }
 
 .primaryButton:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
 }
 
 .secondaryButton {
   background-color: transparent;
   color: #A0AEC0;
   border: 2px solid #4A5568;
-  padding: 13px 28px; /* أقل قليلاً ليتناسب مع الحدود */
+  padding: 13px 28px;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition: all 0.2s;
+  font-family: inherit;
 }
 
 .secondaryButton:hover {
   background-color: #4A5568;
   color: white;
+  border-color: #4A5568;
 }

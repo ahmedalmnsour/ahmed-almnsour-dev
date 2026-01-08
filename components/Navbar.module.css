@@ -1,82 +1,122 @@
 /* Navbar.module.css */
+
+/* الشريط الرئيسي */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  height: 70px;
   width: 100%;
-  background-color: rgba(26, 32, 44, 0.8);
+  background-color: rgba(26, 32, 44, 0.95);
   backdrop-filter: blur(10px);
-  padding: 15px 40px;
+  border-bottom: 1px solid #2D3748;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+/* حاوية المحتوى */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
-  border-bottom: 1px solid #2D3748;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none !important;
+/* الشعار */
+.logo a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
-.navLinks {
+/* القائمة في وضع سطح المكتب */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
   list-style: none;
   display: flex;
   gap: 30px;
   margin: 0;
   padding: 0;
-  transition: all 0.3s ease-in-out;
 }
 
-.navLink a {
+.navItem a {
   color: #A0AEC0;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
-.navLink a:hover {
-  color: #007BFF;
+.navItem a:hover {
+  color: #ffffff;
 }
 
-.menuIcon {
+/* زر القائمة (مخفي افتراضياً) */
+.menuButton {
   display: none;
+  background: none;
+  border: none;
+  color: white; /* لون الأيقونة */
   cursor: pointer;
-  z-index: 10;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
-.menuIcon span {
-  font-size: 36px;
-  color: white;
+/* تنسيق الأيقونة الجديدة (SVG) */
+.menuButton svg {
+  width: 32px;
+  height: 32px;
 }
 
-/* الكود الخاص بالجوال */
+/* --- تنسيقات الجوال --- */
 @media (max-width: 768px) {
-  .navLinks {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #1A202C;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .navLinks.active {
+  .menuButton {
     display: flex;
   }
-  
-  .navLink a {
-    font-size: 1.5rem;
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #1A202C;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    border-top: 1px solid #2D3748;
+    display: none;
   }
 
-  .menuIcon {
-    display: block;
+  .nav.active {
+    display: flex;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .navItem a {
+    font-size: 1.2rem;
+    color: #E2E8F0;
+  }
+  
+  .navItem a:hover {
+    color: #3b82f6;
   }
 }

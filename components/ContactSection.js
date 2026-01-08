@@ -2,39 +2,37 @@
 
 import React from 'react';
 import styles from './ContactSection.module.css';
-import { FaWhatsapp } from 'react-icons/fa';
+import { WhatsappIcon, EnvelopeIcon } from './Icons';
 
 export default function ContactSection() {
-  const yourEmail = "almnsour.ahmed@hotmail.com";
-  const whatsappUrl = "https://wa.me/96597311821"; 
+  const yourEmail = "almnsour.ahmed@gmail.com";
+  const whatsappUrl = "https://wa.me/96597311821";
 
   return (
-    // تمت إضافة id="contact" هنا
-    <section id="contact" className={styles.sectionContainer}>
-      <div className={styles.maxWidthWrapper}>
-        <h2 className={styles.sectionTitle}>لنتحدث!</h2>
-        <p className={styles.sectionSubtitle}>
+    <section id="contact" className={styles.section}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>لنتحدث!</h2>
+        <p className={styles.subtitle}>
           أنا دائمًا متحمس لمناقشة المشاريع الجديدة أو الأفكار الإبداعية. أفضل طريقة للتواصل معي هي عبر الواتساب أو البريد الإلكتروني.
         </p>
-        
+
         <div className={styles.socialLinks}>
-          <a 
-            href={whatsappUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className={styles.socialIcon} 
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialIcon}
             aria-label="WhatsApp"
           >
-            <FaWhatsapp />
+            <WhatsappIcon />
           </a>
-          <a 
-            href={`mailto:${yourEmail}`} 
-            className={styles.socialIcon} 
+          
+          <a
+            href={`mailto:${yourEmail}`}
+            className={styles.socialIcon}
             aria-label="Email"
           >
-            <span className="material-symbols-outlined">
-              mail
-            </span>
+            <EnvelopeIcon />
           </a>
         </div>
       </div>

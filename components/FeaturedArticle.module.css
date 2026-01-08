@@ -1,0 +1,150 @@
+/* FeaturedArticle.module.css */
+
+.section {
+  padding: 4rem 2rem;
+  background-color: #171923;
+  border-top: 1px solid #2D3748;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* الرأس والعناوين */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #E2E8F0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-family: sans-serif;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: #3182CE;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* الشبكة */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* تم تعديل 350 إلى 300 لضمان عدم الكسر في الجوالات الصغيرة */
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* البطاقة */
+.card {
+  background-color: #2D3748;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #4A5568;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* منطقة الصورة */
+.imageWrapper {
+  position: relative;
+  height: 250px;
+  width: 100%;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(5px);
+}
+
+/* محتوى البطاقة */
+.content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  min-height: 3.9rem;
+}
+
+.excerpt {
+  color: #CBD5E0;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* الأزرار والروابط */
+.readMoreBtn {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #3182CE, #63B3ED);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+  display: inline-block;
+}
+
+.archiveWrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.archiveLink {
+  color: #A0AEC0;
+  text-decoration: underline;
+  font-size: 1.1rem;
+}
+
+/* تحسينات للجوال */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .imageWrapper {
+    height: 200px;
+  }
+}

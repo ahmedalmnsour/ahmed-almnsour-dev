@@ -2,23 +2,22 @@ import React from 'react';
 import styles from './SkillsSection.module.css';
 
 const skills = [
-  'HTML',
-  'CSS',
-  'JavaScript',
+  'HTML5 & CSS3',
+  'TypeScript',
   'React',
   'Next.js',
-  'Material Design'
+  'Node.js',
+  'Python (AI)'
 ];
 
 export default function SkillsSection() {
   return (
-    // تمت إضافة id="skills" هنا
-    <section id="skills" className={styles.sectionContainer}>
-      <div className={styles.maxWidthWrapper}>
-        <h2 className={styles.sectionTitle}>المهارات التقنية</h2>
-        <ul className={styles.skillsList}>
+    <section id="skills" className={styles.section}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>المهارات التقنية</h2>
+        <ul className={styles.list}>
           {skills.map((skill, index) => (
-            <li key={index} className={styles.skillBadge}>
+            <li key={index} className={styles.badge}>
               {skill}
             </li>
           ))}

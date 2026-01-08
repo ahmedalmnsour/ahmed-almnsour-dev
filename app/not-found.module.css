@@ -5,23 +5,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* نستخدم calc لطرح ارتفاع النافبار والفوتر بشكل تقريبي */
   min-height: calc(100vh - 150px);
   text-align: center;
   padding: 20px;
+  font-family: var(--font-tajawal), sans-serif;
 }
 
-.icon {
-  font-size: 60px;
+/* تنسيق الأيقونة */
+.iconWrapper {
   color: #718096;
   margin-bottom: 20px;
 }
 
+.iconWrapper svg {
+  width: 60px;
+  height: 60px;
+}
+
 .title {
   font-size: 3rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace; /* مناسب لثيم البرمجة 404 */
   color: #E2E8F0;
   margin: 0;
+  font-weight: 700;
 }
 
 .subtitle {
@@ -33,7 +39,7 @@
 }
 
 .homeButton {
-  background-color: #007BFF;
+  background: linear-gradient(90deg, #3182CE, #63B3ED); /* الأزرق الموحد */
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -41,15 +47,16 @@
   font-size: 1rem;
   font-weight: bold;
   transition: transform 0.2s;
+  border: none;
 }
 
 .homeButton:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
 }
 
-/* --- التنسيق الجديد للعداد --- */
 .countdownText {
   margin-top: 30px;
-  font-size: 1rem;
-  color: #718096; /* لون باهت */
+  font-size: 0.9rem;
+  color: #718096;
 }
