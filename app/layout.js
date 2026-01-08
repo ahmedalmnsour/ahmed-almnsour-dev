@@ -20,6 +20,18 @@ export const metadata = {
   title: 'Ahmed Almnsour - Software Developer',
   description: 'The personal portfolio for Ahmed Almnsour.',
   icons: { icon: '/icon.svg' },
+  
+  // 👇 هنا تم إضافة إعدادات العناكب (Robots)
+  robots: {
+    index: false,  // (لا تؤرشف) : تمنع ظهور الصفحة في نتائج البحث
+    follow: true,  // (تجوّل) : تسمح للعناكب بالدخول وتتبع الروابط الداخلية
+    nocache: true, // (لا تخزن) : تمنع تخزين نسخة من الصفحة في ذاكرة جوجل
+    googleBot: {
+      index: false,
+      follow: true,
+      noimageindex: true, // (اختياري) لمنع أرشفة الصور أيضاً
+    },
+  },
 };
 
 export const viewport = {
