@@ -9,7 +9,6 @@ const nextConfig = {
       },
     ],
   },
-  // 👇 هنا تبدأ إضافة دروع الحماية (Security Headers)
   async headers() {
     return [
       {
@@ -30,6 +29,10 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
           },
           {
             key: 'Content-Security-Policy',
