@@ -20,7 +20,31 @@ export const metadata = {
   title: 'Ahmed Almnsour - Software Developer',
   description: 'The personal portfolio for Ahmed Almnsour.',
   icons: { icon: '/icon.svg' },
-  
+
+  openGraph: {
+    title: 'Ahmed Almnsour - Software Developer',
+    description: 'The personal portfolio for Ahmed Almnsour.',
+    url: 'https://ahmed.almnsour.net',
+    siteName: 'Ahmed Almnsour',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ahmed Almnsour Portfolio Preview',
+      },
+    ],
+    locale: 'ar_SA',
+    type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ahmed Almnsour - Software Developer',
+    description: 'The personal portfolio for Ahmed Almnsour.',
+    images: ['/og-image.jpg'],
+  },
+
   robots: {
     index: false,
     follow: true,
