@@ -17,13 +17,13 @@ const tajawal = localFont({
 
 export const metadata = {
   metadataBase: new URL('https://ahmed.almnsour.net'),
-  title: 'Ahmed Almnsour - Software Developer',
-  description: 'The personal portfolio for Ahmed Almnsour.',
+  title: 'Ahmed Almnsour | Software Developer & Full-Stack Specialist',
+  description: 'Explore my professional portfolio built with high-performance Next.js environments and clean, maintainable CSS. Showcasing modern web development skills and creative digital solutions.',
   icons: { icon: '/icon.svg' },
-
+  
   openGraph: {
-    title: 'Ahmed Almnsour - Software Developer',
-    description: 'The personal portfolio for Ahmed Almnsour.',
+    title: 'Ahmed Almnsour | Software Developer & Full-Stack Specialist',
+    description: 'Explore my professional portfolio built with high-performance Next.js environments and clean, maintainable CSS. Showcasing modern web development skills and creative digital solutions.',
     url: 'https://ahmed.almnsour.net',
     siteName: 'Ahmed Almnsour',
     images: [
@@ -40,8 +40,8 @@ export const metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Ahmed Almnsour - Software Developer',
-    description: 'The personal portfolio for Ahmed Almnsour.',
+    title: 'Ahmed Almnsour | Software Developer & Full-Stack Specialist',
+    description: 'Explore my professional portfolio built with high-performance Next.js environments and clean, maintainable CSS.',
     images: ['/og-image.jpg'],
   },
 
