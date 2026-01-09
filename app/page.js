@@ -1,14 +1,15 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import FeaturedProject from '@/components/FeaturedProject';
-import SkillsSection from '@/components/SkillsSection';
-import FeaturedArticle from '@/components/FeaturedArticle';
-import ContactSection from '@/components/ContactSection';
+
+const AboutSection = dynamic(() => import('@/components/AboutSection'));
+const FeaturedProject = dynamic(() => import('@/components/FeaturedProject'));
+const SkillsSection = dynamic(() => import('@/components/SkillsSection'));
+const FeaturedArticle = dynamic(() => import('@/components/FeaturedArticle'));
+const ContactSection = dynamic(() => import('@/components/ContactSection'));
 
 export default function Home() {
-
   return (
     <>
       <HeroSection />
