@@ -46,13 +46,16 @@ export const metadata = {
   },
 
   robots: {
-    index: false,
+    index: true,
     follow: true,
-    nocache: true,
+    nocache: false,
     googleBot: {
-      index: false,
+      index: true,
       follow: true,
-      noimageindex: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
 };
