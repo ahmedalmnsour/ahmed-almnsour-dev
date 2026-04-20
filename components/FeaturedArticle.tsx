@@ -1,26 +1,26 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { articlesData } from '@/data/articles'; 
+import { articlesData } from '@/data/articles';
 import styles from './FeaturedArticle.module.css';
 
 export default function FeaturedArticle() {
   
-const featuredPosts = [...articlesData].sort((a, b) => b.id - a.id).slice(0, 2);
+  const featuredPosts = [...articlesData].sort((a, b) => b.id - a.id).slice(0, 2);
 
-  const [viewsMap, setViewsMap] = useState({});
+  const [viewsMap, setViewsMap] = useState<Record<number, number>>({});
 
   useEffect(() => {
     const startDate = new Date('2025-11-29T00:00:00'); 
     const now = new Date();
-    const timeDiff = now - startDate;
+    const timeDiff = now.getTime() - startDate.getTime();
     const daysPassed = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
     
-    const newViews = {};
+    const newViews: Record<number, number> = {};
     featuredPosts.forEach(post => {
-      newViews[post.id] = post.baseViews + (daysPassed * 2);
+      newViews[post.id] = (post.baseViews ?? 0) + (daysPassed * 2);
     });
     
     setViewsMap(newViews);

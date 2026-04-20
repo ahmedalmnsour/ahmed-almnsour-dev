@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-import { MenuIcon, CloseIcon } from './Icons'; // 👈 تأكد من هذا الاستيراد
+import { MenuIcon, CloseIcon } from './Icons';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

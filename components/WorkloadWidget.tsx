@@ -1,20 +1,32 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './WorkloadWidget.module.css';
+
+interface SystemStatus {
+  text: string;
+  color: string;
+}
+
+interface QueueProject {
+  id: number;
+  name: string;
+  baseProgress: number;
+  type: 'private' | 'internal';
+  progress: number;
+}
 
 export default function WorkloadWidget() {
   
-  // الحالة المبدئية
-  const [activeQueue, setActiveQueue] = useState([]);
+  const [activeQueue, setActiveQueue] = useState<QueueProject[]>([]);
   
-  // 1. نبدأ من الصفر (0) بدلاً من رقم افتراضي
   const [bookedHours, setBookedHours] = useState(0); 
   
-  // 2. الحالة المبدئية رمادية (جاري التحليل)
-  const [systemStatus, setSystemStatus] = useState({ text: "جاري تحليل البيانات...", color: "#718096" });
+  const [systemStatus, setSystemStatus] = useState<SystemStatus>({ 
+    text: "جاري تحليل البيانات...", 
+    color: "#718096" 
+  });
 
-  // 3. حالة للتأكد من التحميل
   const [isLoaded, setIsLoaded] = useState(false);
 
   const maxCapacity = 160;
@@ -32,7 +44,7 @@ export default function WorkloadWidget() {
     setBookedHours(calculatedHours);
 
     // --- تحديد الحالة واللون ---
-    let newStatus = {};
+    let newStatus: SystemStatus;
     if (calculatedHours < 135) {
         newStatus = { text: "مستقر (Active Load)", color: "#48BB78" }; // أخضر
     } else if (calculatedHours < 150) {
@@ -44,25 +56,24 @@ export default function WorkloadWidget() {
 
     // --- حساب نسب المشاريع ---
     const startDate = new Date('2025-11-29T00:00:00'); 
-    const diffTime = Math.abs(now - startDate);
+    const diffTime = Math.abs(now.getTime() - startDate.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     const projectProgressIncrement = Math.floor(diffDays / 2);
 
-    const baseProjects = [
+    const baseProjects: Omit<QueueProject, 'progress'>[] = [
       { id: 1, name: "🔒 مشروع خاص (NDA)", baseProgress: 66, type: "private" },
       { id: 3, name: "منصة اختبارات الثانوية", baseProgress: 27, type: "internal" },
       { id: 4, name: "Arabic PDF Tool", baseProgress: 8, type: "internal" },
       { id: 5, name: "الجدول الذكي (Smart Scheduler)", baseProgress: 1, type: "internal" },
     ];
 
-    const updatedQueue = baseProjects.map(p => ({
+    const updatedQueue: QueueProject[] = baseProjects.map(p => ({
       ...p,
       progress: Math.min(p.baseProgress + projectProgressIncrement, 100)
     }));
 
     setActiveQueue(updatedQueue);
     
-    // تفعيل الظهور بعد الحساب
     setIsLoaded(true);
 
   }, []);
