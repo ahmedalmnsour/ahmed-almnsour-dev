@@ -1,0 +1,51 @@
+"use client";
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import styles from './Navbar.module.css';
+import { MenuIcon, CloseIcon } from './Icons'; // 👈 تأكد من هذا الاستيراد
+
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <header className={styles.navbar}>
+      <div className={styles.container}>
+        
+        {/* الشعار */}
+        <div className={styles.logo}>
+           <Link href="/" prefetch={false}>Ahmed.Almnsour.dev</Link>
+        </div>
+        
+        {/* 👇 هذا هو التغيير الجوهري: استخدام SVG بدلاً من span */}
+        <button 
+          className={styles.menuButton} 
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? (
+            <CloseIcon /> 
+          ) : (
+            <MenuIcon />
+          )}
+        </button>
+      
+        {/* القائمة */}
+        <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}><Link href="/#home" onClick={() => setIsMenuOpen(false)} prefetch={false}>الرئيسية</Link></li>
+            <li className={styles.navItem}><Link href="/#about" onClick={() => setIsMenuOpen(false)} prefetch={false}>نبذة عني</Link></li>
+            <li className={styles.navItem}><Link href="/#projects" onClick={() => setIsMenuOpen(false)} prefetch={false}>أعمالي</Link></li>
+            <li className={styles.navItem}><Link href="/#skills" onClick={() => setIsMenuOpen(false)} prefetch={false}>المهارات</Link></li>
+            <li className={styles.navItem}><Link href="/#articles" onClick={() => setIsMenuOpen(false)} prefetch={false}>المعمل</Link></li>
+            <li className={styles.navItem}><Link href="/#contact" onClick={() => setIsMenuOpen(false)} prefetch={false}>اتصل بي</Link></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+}

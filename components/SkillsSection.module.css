@@ -1,0 +1,69 @@
+/* SkillsSection.module.css */
+
+.section {
+  padding: 4rem 2rem;
+  background-color: #1A202C;
+  text-align: center;
+  border-top: 1px solid #2D3748; /* فاصل خفيف */
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E2E8F0;
+  margin: 0;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: #3182CE;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.badge {
+  background-color: #2D3748;
+  color: #CBD5E0;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #4A5568; /* إطار خفيف للبروز */
+  transition: all 0.2s ease-in-out;
+  cursor: default;
+}
+
+.badge:hover {
+  background-color: #3182CE; /* نفس درجة الأزرق المستخدمة في باقي الموقع */
+  border-color: #3182CE;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+/* --- للشاشات الكبيرة --- */
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .badge {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ahmed-almnsour-dev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^16.0.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/react": "19.2.2",
+    "eslint": "^9",
+    "eslint-config-next": "^16.0.7"
+  }
+}

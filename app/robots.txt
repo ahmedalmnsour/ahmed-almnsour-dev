@@ -1,0 +1,35 @@
+User-agent: *
+
+Allow: /$
+Allow: /articles
+Allow: /projects
+Allow: /_next/static/
+Allow: /_next/image/
+Allow: /images/
+Allow: /icon.svg
+
+Disallow: /
+
+# ==============================================================================
+# Block AI Training Crawlers
+# ==============================================================================
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://ahmed.almnsour.net/sitemap.xml
