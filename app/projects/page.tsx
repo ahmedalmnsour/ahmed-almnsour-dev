@@ -1,97 +1,97 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './projects.module.css';
-import ProjectCard from '@/components/ProjectCard';
+import ProjectCard, { type Project } from '@/components/ProjectCard';
 import WorkloadWidget from '@/components/WorkloadWidget';
 
 // --- قائمة المشاريع ---
-const allProjects = [
+const allProjects: Project[] = [
   // 1. مشاريع حية وقوية
-    { 
-    id: 1, 
-    title: 'منصة زميلي (v2.0.0)', 
-    description: 'الإصدار الثاني المكتمل: حل هندسي متكامل لإدارة حصص الاحتياط في القطاع التعليمي بكفاءة عالية.', 
-    image: '/images/myzameel.2.0.0.webp', 
+  {
+    id: 1,
+    title: 'منصة زميلي (v2.0.0)',
+    description: 'الإصدار الثاني المكتمل: حل هندسي متكامل لإدارة حصص الاحتياط في القطاع التعليمي بكفاءة عالية.',
+    image: '/images/myzameel.2.0.0.webp',
     link: 'https://www.myzameel.com/welcome',
     category: 'code',
-    status: 'live' 
+    status: 'live'
   },
-  { 
-    id: 2, 
-    title: 'نظام تداول - العقل الذهبي', 
+  {
+    id: 2,
+    title: 'نظام تداول - العقل الذهبي',
     description: "نظام تداول خوارزمي مستقل لسوق الذهب، ذكي جداً، يعتمد في قراره على مجلس مستشارين من أفضل نماذج الذكاء الاصطناعي.",
-    image: '/images/trade-screenshot.webp', 
-    link: "/images/gold-ai-full.webp",     
+    image: '/images/trade-screenshot.webp',
+    link: "/images/gold-ai-full.webp",
     category: 'code',
-    status: 'beta' 
+    status: 'beta'
   },
-  { 
-    id: 3, 
-    title: 'كودي - مولد الباركود', 
+  {
+    id: 3,
+    title: 'كودي - مولد الباركود',
     description: 'تطبيق ويب لإنشاء وتخصيص رموز QR بشكل فوري وسهل.',
-    image: '/images/qrcodi.webp', 
+    image: '/images/qrcodi.webp',
     link: 'https://www.qrcodi.me/',
     category: 'code',
     status: 'live'
   },
 
   // 2. مشاريع خاصة (Enterprise)
-  { 
-    id: 4, 
-    title: '+40 مشروع خاص (Enterprise)', 
+  {
+    id: 4,
+    title: '+40 مشروع خاص (Enterprise)',
     description: 'مشاريع برمجية خاصة (Private Source) تم تطويرها لشركات وعملاء منذ عام 2008. (حقوق الملكية والنشر محفوظة للعملاء).',
-    image: '/images/private.webp', 
-    link: '#', 
+    image: '/images/private.webp',
+    link: '#',
     category: 'code',
-    status: 'closed' 
+    status: 'closed'
   },
 
   // 3. مشاريع المستقبل
-  { 
-    id: 5, 
-    title: 'المحول العربي (Arabic PDF Master)', 
+  {
+    id: 5,
+    title: 'المحول العربي (Arabic PDF Master)',
     description: 'قريباً: الأداة الأولى من نوعها المعتمدة على الذكاء الاصطناعي لتحويل ملفات Word العربية إلى PDF مع الحفاظ على الجداول.',
-    image: '/images/pdf-master.webp', 
-    link: '#', 
+    image: '/images/pdf-master.webp',
+    link: '#',
     category: 'code',
-    status: 'soon' 
+    status: 'soon'
   },
-{ 
-    id: 6, 
-    title: 'نظامي، منصة لإنشاء الجداول', 
+  {
+    id: 6,
+    title: 'نظامي، منصة لإنشاء الجداول',
     description: 'منصة ويب لإنشاء الجداول المدرسية، تتيح للإدارة توزيع الحصص والموارد وفق أحدث المعايير والخوارزميات الحديثة.',
     image: '/images/school-erp.webp',
-    link: '#', 
+    link: '#',
     category: 'code',
     status: 'soon'
   },
 
   // 4. بقية المشاريع
-  { 
-    id: 7, 
-    title: 'اختبارات الثانوية التجريبية', 
+  {
+    id: 7,
+    title: 'اختبارات الثانوية التجريبية',
     description: 'قريباً: منصة تفاعلية لطلاب الثانوية العامة لأداء اختبارات تجريبية.',
-    image: '/images/quiz.webp', 
+    image: '/images/quiz.webp',
     link: '#',
     category: 'code',
     status: 'soon'
   },
-  { 
-    id: 8, 
-    title: 'معرض الأعمال', 
+  {
+    id: 8,
+    title: 'معرض الأعمال',
     description: 'دراسة حالة عن كيفية بناء هذا الموقع باستخدام Next.js.',
-    image: '/images/nextjs.webp', 
+    image: '/images/nextjs.webp',
     link: 'https://ahmed.almnsour.net/portfolio-story',
     category: 'code',
     status: 'live'
   },
-  { 
-    id: 9, 
-    title: 'عقود الصيانة والدعم (Retainers)', 
+  {
+    id: 9,
+    title: 'عقود الصيانة والدعم (Retainers)',
     description: 'خدمة إدارة تقنية مستمرة لضمان استقرار المواقع، الحماية من الثغرات، وتحديث الأنظمة لعدد من العملاء الاستراتيجيين.',
-    image: '/images/maintenance.webp', 
-    link: 'https://wa.me/96597311821', 
+    image: '/images/maintenance.webp',
+    link: 'https://wa.me/96597311821',
     category: 'code',
     status: 'live'
   },
@@ -104,8 +104,6 @@ const allProjects = [
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/1.pdf',
     category: 'design',
     type: 'مطوية',
-    views: '1,350',
-    downloads: '1,000',
   },
   {
     id: 11,
@@ -114,8 +112,6 @@ const allProjects = [
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/2.pdf',
     category: 'design',
     type: 'مطوية',
-    views: '2,100',
-    downloads: '1,152',
   },
   {
     id: 12,
@@ -124,8 +120,6 @@ const allProjects = [
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/3.pdf',
     category: 'design',
     type: 'مطوية',
-    views: '1,250',
-    downloads: '1,010',
   },
   {
     id: 13,
@@ -134,8 +128,6 @@ const allProjects = [
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/4.pdf',
     category: 'design',
     type: 'مطوية',
-    views: '3,230',
-    downloads: '1,200'
   },
   {
     id: 14,
@@ -144,8 +136,6 @@ const allProjects = [
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/5.pdf',
     category: 'design',
     type: 'مطوية',
-    views: '3,540',
-    downloads: '1,350'
   },
   {
     id: 15,
@@ -154,20 +144,18 @@ const allProjects = [
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/6.pdf',
     category: 'design',
     type: 'مطوية',
-    views: '2,900',
-    downloads: '1,150'
   },
 ];
 
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState('code');
+  const [filter, setFilter] = useState<'code' | 'design'>('code');
 
   const filteredProjects = allProjects.filter(p => p.category === filter);
 
   return (
     <main className="main-content">
       <section className={styles.projectsSection}>
-        
+
         {/* العنوان والوصف */}
         <div className={styles.header}>
           <h1 className={styles.title}>أعمالي</h1>

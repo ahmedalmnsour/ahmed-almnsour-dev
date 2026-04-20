@@ -1,4 +1,4 @@
-import React from 'react';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { articlesData } from '@/data/articles';
@@ -6,9 +6,11 @@ import { notFound } from 'next/navigation';
 import VideoPlayer from '@/components/VideoPlayer';
 import styles from './article.module.css';
 
-
 const siteUrl = 'https://ahmed.almnsour.net';
 
+interface ArticlePageProps {
+  params: Promise<{ id: string }>;
+}
 
 export async function generateStaticParams() {
   return articlesData.map((article) => ({
@@ -17,16 +19,15 @@ export async function generateStaticParams() {
 }
 
 // --- Metadata ---
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { id } = await params;
   const article = articlesData.find((p) => p.id.toString() === id);
   if (!article) return { title: 'المقال غير موجود' };
 
-  const imagePath = article.ogImage || article.image;
-  let ogImageUrl;
+  let ogImageUrl: string | undefined;
 
-  if (imagePath) {
-    const cleanPath = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+  if (article.image) {
+    const cleanPath = article.image.startsWith('/') ? article.image : `/${article.image}`;
     ogImageUrl = `${siteUrl}${cleanPath}`;
   } else if (article.videoId) {
     ogImageUrl = `https://i.ytimg.com/vi/${article.videoId}/maxresdefault.jpg`;
@@ -54,26 +55,52 @@ export async function generateMetadata({ params }) {
 }
 
 // --- مكون الصفحة ---
-export default async function ArticlePage({ params }) {
+export default async function ArticlePage({ params }: ArticlePageProps) {
   const { id } = await params;
   const article = articlesData.find((p) => p.id.toString() === id);
   if (!article) notFound();
 
   const hasVideo = article.content.includes('[[VIDEO_PLACEHOLDER]]') && article.videoId;
-  let contentParts = [article.content];
+  let contentParts: string[] = [article.content];
   if (hasVideo) {
     contentParts = article.content.split('[[VIDEO_PLACEHOLDER]]');
   }
 
   // --- Schema Markup ---
-  let schemaImage = article.ogImage || article.image;
+  let schemaImage: string | undefined = article.image;
   if (schemaImage && !schemaImage.startsWith('http')) {
-      schemaImage = `${siteUrl}${schemaImage.startsWith('/') ? schemaImage : '/' + schemaImage}`;
+    schemaImage = `${siteUrl}${schemaImage.startsWith('/') ? schemaImage : '/' + schemaImage}`;
   } else if (article.videoId) {
-      schemaImage = `https://i.ytimg.com/vi/${article.videoId}/maxresdefault.jpg`;
+    schemaImage = `https://i.ytimg.com/vi/${article.videoId}/maxresdefault.jpg`;
   }
 
-  const jsonLd = {
+  interface JsonLd {
+    '@context': string;
+    '@type': string;
+    headline: string;
+    description: string;
+    image: string[];
+    author: {
+      '@type': string;
+      name: string;
+      url: string;
+    };
+    mainEntityOfPage: {
+      '@type': string;
+      '@id': string;
+    };
+    video?: {
+      '@type': string;
+      name: string;
+      description: string;
+      thumbnailUrl: string;
+      uploadDate: string;
+      contentUrl: string;
+      embedUrl: string;
+    };
+  }
+
+  const jsonLd: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: article.title,
@@ -145,7 +172,7 @@ export default async function ArticlePage({ params }) {
           <>
             <div className={styles.contentBody} dangerouslySetInnerHTML={{ __html: contentParts[0] }} />
             <VideoPlayer 
-                videoId={article.videoId} 
+                videoId={article.videoId!} 
                 title={article.videoTitle || article.title} 
             />
             <div className={styles.contentBody} dangerouslySetInnerHTML={{ __html: contentParts[1] }} />

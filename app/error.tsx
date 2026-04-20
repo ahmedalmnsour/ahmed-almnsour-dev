@@ -4,7 +4,12 @@ import Link from 'next/link';
 import styles from './error.module.css';
 import { BugIcon } from '@/components/Icons';
 
-export default function Error({ error, reset }) {
+interface ErrorProps {
+  error: Error & { digest?: string };
+  reset: () => void;
+}
+
+export default function Error({ error, reset }: ErrorProps) {
   return (
     <div className={styles.container}>
       

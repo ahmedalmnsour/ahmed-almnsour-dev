@@ -4,13 +4,14 @@ import Image from 'next/image';
 import styles from './ProjectCard.module.css';
 
 export interface Project {
+  id: number;
   title: string;
   image: string;
   link: string;
   category: 'design' | 'code';
   type?: string;
   description?: string;
-  status?: 'soon' | 'beta' | 'closed';
+  status?: 'soon' | 'beta' | 'closed' | 'live';
 }
 
 interface ProjectCardProps {
