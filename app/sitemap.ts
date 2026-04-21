@@ -21,6 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://ahmed.almnsour.net/projects',
       lastModified: new Date(),
     },
+    {
+      url: 'https://ahmed.almnsour.net/portfolio-story',
+      lastModified: new Date(),
+    },
     ...articleUrls,
   ];
 }
