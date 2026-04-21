@@ -29,10 +29,11 @@ export default function FeaturedProject() {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: 'cover' }}
+                  priority
                 />
-               <span className={styles.badge}>
-                 Live System 🟢
-               </span>
+               <span className={styles.badgeResearch}>
+                قيد التطوير ⚙️
+              </span>
             </div>
 
            {/* العمود الثاني: المحتوى */}
@@ -43,12 +44,10 @@ export default function FeaturedProject() {
               </h3>
 
               <p className={styles.projectDescription}>
-                نظام تداول خوارزمي مستقل لسوق الذهب (XAUUSD)، 
-                اختُبر على بيانات تاريخية تمتد لأكثر من <strong>16 عاماً</strong>.
-                <br /><br />
-                يعتمد على منظومة <strong>"مجلس مستشارين"</strong> تضم أربعة نماذج عالمية؛ 
-                GPT, Gemini, Claude, DeepSeek، لكل واحد دور محدد، 
-                والقرار النهائي لا يملكه أحد بمفرده.
+              نظام تداول خاص بسوق الذهب (XAUUSD)، ما زال قيد البحث والتطوير.<br />
+              يعتمد النظام على فكرة <strong>الكشّافة والقنّاص</strong> و<strong>مجلس المستشارين</strong>،<br /> لكل مستشار
+              دور محدّد، بالإضافة لخوارزمية <strong>Causal Decision</strong> لتقييم دور كل مستشار.<br />
+              ما زلت أختبره على بيانات تاريخية <strong>16 عاماً</strong>، قبل الانتقال للتداول الحقيقي.
               </p>
               
               {/* التقنيات (Badges) */}

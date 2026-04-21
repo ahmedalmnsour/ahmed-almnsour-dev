@@ -9,7 +9,7 @@ export interface Project {
   category: 'design' | 'code';
   type?: string;
   description?: string;
-  status?: 'soon' | 'beta' | 'closed' | 'live';
+  status?: 'soon' | 'beta' | 'closed' | 'live' | 'research';
 }
 
 interface ProjectCardProps {
@@ -65,6 +65,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.status === 'closed' && (
                 <span className={styles.badgeClosed}>مغلق (Enterprise)</span>
             )}
+            {project.status === 'research' && (
+                <span className={styles.badgeResearch}>قيد التطوير ⚙️</span>
+            )}
+
         </div>
 
         <h3 className={styles.cardTitle}>{project.title}</h3>
