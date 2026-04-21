@@ -1,5 +1,3 @@
-"use client";
-
 import styles from './ContactSection.module.css';
 import { WhatsappIcon, EnvelopeIcon } from './Icons';
 
