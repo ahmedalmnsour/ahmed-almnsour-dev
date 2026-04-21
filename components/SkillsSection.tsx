@@ -2,10 +2,11 @@ import styles from './SkillsSection.module.css';
 
 const skills: string[] = [
   'TypeScript',
-  'React',
   'Next.js',
   'Node.js',
-  'Python'
+  'Python',
+  'Supabase',
+  'Tailwind'
 ];
 
 export default function SkillsSection() {

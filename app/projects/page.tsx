@@ -20,11 +20,11 @@ const allProjects: Project[] = [
   {
     id: 2,
     title: 'نظام تداول - العقل الذهبي',
-    description: "نظام تداول خوارزمي مستقل لسوق الذهب، ذكي جداً، يعتمد في قراره على مجلس مستشارين من أفضل نماذج الذكاء الاصطناعي.",
+    description: "نظام تداول خاص بسوق الذهب (XAUUSD)، ما زال قيد البحث والتطوير. يعتمد على فكرة الكشّافة والقنّاص ومجلس المستشارين، مع خوارزمية Causal Decision لتقييم الأدوار.",
     image: '/images/trade-screenshot.webp',
     link: "/images/gold-ai-full.webp",
     category: 'code',
-    status: 'beta'
+    status: 'research'
   },
   {
     id: 3,
@@ -162,9 +162,6 @@ export default function ProjectsPage() {
           <p className={styles.subtitle}>هذه مشاريعي، بعضها مفتوح للعرض وبعضها لأصحابها حقوقهم محفوظة.</p>
         </div>
 
-        {/* لوحة ضغط العمل */}
-        <WorkloadWidget />
-
         {/* أزرار الفلترة */}
         <div className={styles.filterButtons}>
           <button onClick={() => setFilter('code')} className={filter === 'code' ? styles.active : ''}>أعمال برمجية</button>
@@ -182,6 +179,10 @@ export default function ProjectsPage() {
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
+
+        {/* لوحة ضغط العمل — في الأسفل كتذكير بعد عرض المشاريع */}
+        <WorkloadWidget />
+
       </section>
     </main>
   );
