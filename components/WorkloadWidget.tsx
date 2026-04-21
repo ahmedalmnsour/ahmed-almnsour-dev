@@ -11,71 +11,32 @@ interface SystemStatus {
 interface QueueProject {
   id: number;
   name: string;
-  baseProgress: number;
-  type: 'private' | 'internal';
   progress: number;
+  type: 'private' | 'internal';
 }
 
 export default function WorkloadWidget() {
-  
-  const [activeQueue, setActiveQueue] = useState<QueueProject[]>([]);
-  
-  const [bookedHours, setBookedHours] = useState(0); 
-  
-  const [systemStatus, setSystemStatus] = useState<SystemStatus>({ 
-    text: "جاري تحليل البيانات...", 
-    color: "#718096" 
-  });
-
   const [isLoaded, setIsLoaded] = useState(false);
 
   const maxCapacity = 160;
-  const nextAvailableDate = "11 أكتوبر 2026"; 
+  const bookedHours = 152;
+  const nextAvailableDate = "11 أكتوبر 2026";
+
+  const systemStatus: SystemStatus = bookedHours < 135
+    ? { text: "مستقر — متاح للحجوزات", color: "#48BB78" }
+    : bookedHours < 150
+      ? { text: "ضغط متوسط — نوافذ محدودة", color: "#ECC94B" }
+      : { text: "مغلق للحجوزات الجديدة", color: "#F56565" };
+
+  const activeQueue: QueueProject[] = [
+    { id: 1, name: "🔒 مشروع خاص (NDA)", progress: 70, type: "private" },
+    { id: 3, name: "منصة اختبارات الثانوية", progress: 30, type: "internal" },
+    { id: 4, name: "Arabic PDF Tool", progress: 15, type: "internal" },
+    { id: 5, name: "الجدول الذكي (Smart Scheduler)", progress: 5, type: "internal" },
+  ];
 
   useEffect(() => {
-    const now = new Date();
-
-    // --- حساب الساعات (الدورة الشهرية) ---
-    const currentDay = now.getDate(); 
-    const baseRetainerHours = 115; 
-    const dailyIncrement = currentDay * 1.4; 
-    
-    const calculatedHours = Math.min(Math.floor(baseRetainerHours + dailyIncrement), 159);
-    setBookedHours(calculatedHours);
-
-    // --- تحديد الحالة واللون ---
-    let newStatus: SystemStatus;
-    if (calculatedHours < 135) {
-        newStatus = { text: "مستقر (Active Load)", color: "#48BB78" }; // أخضر
-    } else if (calculatedHours < 150) {
-        newStatus = { text: "ضغط متوسط (Medium Load)", color: "#ECC94B" }; // أصفر
-    } else {
-        newStatus = { text: "ضغط مرتفع (High Load)", color: "#F56565" }; // أحمر
-    }
-    setSystemStatus(newStatus);
-
-    // --- حساب نسب المشاريع ---
-    const startDate = new Date('2025-11-29T00:00:00'); 
-    const diffTime = Math.abs(now.getTime() - startDate.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    const projectProgressIncrement = Math.floor(diffDays / 2);
-
-    const baseProjects: Omit<QueueProject, 'progress'>[] = [
-      { id: 1, name: "🔒 مشروع خاص (NDA)", baseProgress: 66, type: "private" },
-      { id: 3, name: "منصة اختبارات الثانوية", baseProgress: 27, type: "internal" },
-      { id: 4, name: "Arabic PDF Tool", baseProgress: 8, type: "internal" },
-      { id: 5, name: "الجدول الذكي (Smart Scheduler)", baseProgress: 1, type: "internal" },
-    ];
-
-    const updatedQueue: QueueProject[] = baseProjects.map(p => ({
-      ...p,
-      progress: Math.min(p.baseProgress + projectProgressIncrement, 100)
-    }));
-
-    setActiveQueue(updatedQueue);
-    
     setIsLoaded(true);
-
   }, []);
 
   return (
@@ -153,10 +114,6 @@ export default function WorkloadWidget() {
             {isLoaded ? `${bookedHours} / ${maxCapacity}` : 'جاري الحساب...'} ساعة محجوزة
           </div>
         </div>
-        
-        <p className={styles.disclaimer}>
-          * تُحدَّث الساعات كل شهر حسب عقود الصيانة والمشاريع.
-        </p>
       </div>
 
     </div>
