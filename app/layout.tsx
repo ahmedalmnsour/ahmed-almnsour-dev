@@ -1,3 +1,5 @@
+import type { Metadata, Viewport } from 'next';
+import type { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -15,7 +17,7 @@ const tajawal = localFont({
   preload: true,
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://ahmed.almnsour.net'),
   title: 'أحمد المنصور | مُعلِّم ومُطوِّر',
   description: 'أسكن المسافة بين الفصل الدراسي وشاشة الكود. مُعلِّم حتى يتضح المعنى، ومُطوِّر حتى تظهر الفكرة.',
@@ -60,11 +62,15 @@ export const metadata = {
   },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: '#171923',
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ar" dir="rtl">
       <body className={tajawal.variable}>

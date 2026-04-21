@@ -1,6 +1,20 @@
-// data/articles.js
+// data/articles.ts
 
-export const articlesData = [
+export interface Article {
+  id: number;
+  title: string;
+  excerpt: string;
+  category: string;
+  categoryLabel: string;
+  date: string;
+  image: string;
+  content: string;
+  videoId?: string;
+  videoTitle?: string;
+  baseViews?: number;
+}
+
+export const articlesData: Article[] = [
    {
     id: 22,
     title: "منصة زميلي، من جدول رقمي إلى نظام يفكر",

@@ -1,11 +1,12 @@
-// app/sitemap.js
-import { articlesData } from '@/data/articles'
+// app/sitemap.ts
+import type { MetadataRoute } from 'next';
+import { articlesData } from '@/data/articles';
 
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
   const articleUrls = articlesData.map((article) => ({
     url: `https://ahmed.almnsour.net/articles/${article.id}`,
     lastModified: new Date(),
-  }))
+  }));
 
   return [
     {
@@ -21,5 +22,5 @@ export default function sitemap() {
       lastModified: new Date(),
     },
     ...articleUrls,
-  ]
+  ];
 }

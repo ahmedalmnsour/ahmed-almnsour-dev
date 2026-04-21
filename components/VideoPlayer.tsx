@@ -1,10 +1,16 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './VideoPlayer.module.css';
 import { PlayIcon } from './Icons';
 
-export default function VideoPlayer({ videoId, title, caption }) {
+interface VideoPlayerProps {
+  videoId: string;
+  title: string;
+  caption?: string;
+}
+
+export default function VideoPlayer({ videoId, title, caption }: VideoPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   
   // نبدأ بمحاولة جلب الصورة عالية الجودة

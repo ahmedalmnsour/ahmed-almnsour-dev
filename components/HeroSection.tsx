@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './HeroSection.module.css';
 import { CodeIcon } from './Icons';
 
@@ -11,7 +10,7 @@ export default function HeroSection() {
       
       {/* المسمى الوظيفي */}
       <h2 className={styles.subtitle}>
-         مُعلِّم ومُطوِّر
+         مُعلِّم ومُطوِّر
       </h2>
 
       {/* الشعار */}

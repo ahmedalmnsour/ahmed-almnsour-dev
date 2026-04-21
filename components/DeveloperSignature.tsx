@@ -2,6 +2,22 @@
 
 import { useEffect, useRef } from 'react';
 
+interface AhmedPortfolio {
+  about: string;
+  skills: string[];
+  contact: {
+    email: string;
+    github: string;
+  };
+  hireMe: () => string;
+}
+
+declare global {
+  interface Window {
+    Ahmed?: AhmedPortfolio;
+  }
+}
+
 export default function DeveloperSignature() {
 
   const printedRef = useRef(false);

@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './FeaturedProject.module.css';
@@ -56,7 +55,7 @@ export default function FeaturedProject() {
               
               {/* التقنيات (Badges) */}
               <div className={styles.techStack}>
-                {['Next.js', 'React',  'Node.js', 'Firestore', 'Firebase Functions'].map(tech => (
+                {['Next.js', 'React',  'Node.js', 'Firestore', 'Firebase Functions'].map(tech => (
                   <span key={tech} className={styles.techBadge}>
                     {tech}
                   </span>

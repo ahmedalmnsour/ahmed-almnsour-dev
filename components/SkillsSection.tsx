@@ -1,7 +1,6 @@
-import React from 'react';
 import styles from './SkillsSection.module.css';
 
-const skills = [
+const skills: string[] = [
   'TypeScript',
   'React',
   'Next.js',

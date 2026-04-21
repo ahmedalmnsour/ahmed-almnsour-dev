@@ -1,10 +1,24 @@
 "use client";
 
-import React from 'react';
 import Image from 'next/image';
 import styles from './ProjectCard.module.css';
 
-export default function ProjectCard({ project }) {
+export interface Project {
+  id: number;
+  title: string;
+  image: string;
+  link: string;
+  category: 'design' | 'code';
+  type?: string;
+  description?: string;
+  status?: 'soon' | 'beta' | 'closed' | 'live';
+}
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+export default function ProjectCard({ project }: ProjectCardProps) {
 
   // 1. حالة التصاميم (Design)
   if (project.category === 'design') {
@@ -20,7 +34,7 @@ export default function ProjectCard({ project }) {
             src={project.image}
             alt={project.title}
             fill
-            sizes="(max-width: 768px) 100px, 150px" // لأنها صورة صغيرة
+            sizes="(max-width: 768px) 100px, 150px"
             className={styles.projectImage}
           />
         </div>
