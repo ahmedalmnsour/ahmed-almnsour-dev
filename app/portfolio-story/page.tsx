@@ -35,7 +35,7 @@ export default function PortfolioStory() {
           </p>
           <ul className={styles.techList}>
             <li className={styles.techItem}>
-              🛠️ <strong>اللغة:</strong> JavaScript
+              🛠️ <strong>اللغة:</strong> TypeScript
             </li>
             <li className={styles.techItem}>
               🏗️ <strong>الأساس:</strong> React Library
@@ -53,7 +53,7 @@ export default function PortfolioStory() {
           📈 التطور التقني والزمني لمشاريعي
         </h2>
         <p className={styles.timelineDescription}>
-          بهالمقالة بحاول أقسّم مشواري لأربع مراحل، البداية كانت HTML Tables والفلاش، ما كنت أتخيل إن هالأدوات راح تتغير بهالسرعة، وبعدها جاء jQuery وBootstrap وكانت طفرة بالنسبة لي، ثم React اللي بطّلت عيوني على عالم ثاني، وأخيراً استقريت على Next.js. ما انتقلت من مرحلة للثانية لأنها موضة، ولكن لأن المرحلة السابقة كانت تأكلني.
+          بهالمقالة بحاول أقسّم مشواري لخمس مراحل، البداية كانت HTML Tables والفلاش، ما كنت أتخيل إن هالأدوات راح تتغير بهالسرعة، وبعدها جاء jQuery وBootstrap وكانت طفرة بالنسبة لي، ثم React اللي بطّلت عيوني على عالم ثاني، واستقريت على Next.js، وأخيراً في 2026 انتقلت إلى TypeScript، مو موضة، لأن كل مرحلة كانت السابقة تأكلني.
         </p>
         <div className={styles.timelineContainer}>
 
@@ -92,8 +92,19 @@ export default function PortfolioStory() {
 
           {/* المرحلة 4 */}
           <div className={styles.timelineItem}>
+            <div className={styles.timelineHeader}>
+              <span>📅 2023 - 2025: Next.js + JavaScript</span>
+              <span>90%</span>
+            </div>
+            <div className={styles.progressBarBg}>
+              <div className={`${styles.progressBarFill} ${styles.fillTealBlue}`}></div>
+            </div>
+          </div>
+
+          {/* المرحلة 5 */}
+          <div className={styles.timelineItem}>
             <div className={`${styles.timelineHeader} ${styles.activeHeader}`}>
-              <span>🚀 2023 - الآن: Next.js Ecosystem</span>
+              <span>🚀 2026 - الآن: Next.js + TypeScript</span>
               <span>100%</span>
             </div>
             <div className={`${styles.progressBarBg} ${styles.activeBg}`}>
