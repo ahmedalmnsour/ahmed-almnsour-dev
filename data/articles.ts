@@ -11,7 +11,6 @@ export interface Article {
   content: string;
   videoId?: string;
   videoTitle?: string;
-  baseViews?: number;
 }
 
 export const articlesData: Article[] = [
