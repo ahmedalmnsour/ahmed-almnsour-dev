@@ -157,6 +157,11 @@
   background: linear-gradient(90deg, #3182CE 0%, #63B3ED 100%);
 }
 
+.fillTealBlue {
+  width: 90%;
+  background-color: #2C7A7B ;
+}
+
 /* --- Benefits Section --- */
 .benefitsSection {
   margin-bottom: 4rem;

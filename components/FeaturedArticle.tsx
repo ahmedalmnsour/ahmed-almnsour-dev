@@ -1,6 +1,3 @@
-"use client";
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { articlesData } from '@/data/articles';
@@ -9,22 +6,6 @@ import styles from './FeaturedArticle.module.css';
 export default function FeaturedArticle() {
   
   const featuredPosts = [...articlesData].sort((a, b) => b.id - a.id).slice(0, 2);
-
-  const [viewsMap, setViewsMap] = useState<Record<number, number>>({});
-
-  useEffect(() => {
-    const startDate = new Date('2025-11-29T00:00:00'); 
-    const now = new Date();
-    const timeDiff = now.getTime() - startDate.getTime();
-    const daysPassed = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
-    
-    const newViews: Record<number, number> = {};
-    featuredPosts.forEach(post => {
-      newViews[post.id] = (post.baseViews ?? 0) + (daysPassed * 2);
-    });
-    
-    setViewsMap(newViews);
-  }, []);
 
   return (
     <section id="articles" className={styles.section}>
@@ -83,7 +64,7 @@ export default function FeaturedArticle() {
         </div>
         <div className={styles.archiveWrapper}>
            <Link href="/articles" className={styles.archiveLink} prefetch={false}>
-             تصفح الأرشيف الكامل للمقالات &larr;
+             تصفح الأرشيف الكامل للمقالات ←
            </Link>
         </div>
 
