@@ -1,0 +1,140 @@
+/* ProjectCard.module.css */
+
+.designCard {
+  background-color: #2D3748;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid #4A5568;
+}
+
+.designCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  border-color: #718096;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.projectType {
+  font-size: 0.8rem;
+  color: #A0AEC0;
+}
+
+.circularImageContainer {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #4A5568;
+}
+
+.codeCard {
+  background-color: #2D3748;
+  border-radius: 15px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid #4A5568;
+  position: relative;
+}
+
+.codeCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  border-color: #718096;
+}
+
+.rectangularImageContainer {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.projectImage {
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.imageGrayscale {
+  filter: grayscale(100%) opacity(0.8);
+}
+
+.cardContent {
+  padding: 20px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  margin: 0;
+  color: #CBD5E0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.statusWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  min-height: 20px;
+}
+
+.badgeSoon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #D69E2E;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.badgeBeta {
+  background-color: #3182CE;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.badgeClosed {
+  background-color: #4A5568;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.badgeResearch {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: rgba(124, 58, 237, 0.15);
+  color: #A78BFA;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

@@ -1,0 +1,101 @@
+/* VideoPlayer.module.css */
+
+.container {
+  margin: 30px 0;
+  font-family: var(--font-tajawal), sans-serif;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border: 1px solid #4A5568;
+  background-color: #000;
+}
+
+.thumbnailButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  display: block;
+}
+
+.thumbnailImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: filter 0.3s ease;
+}
+
+.thumbnailButton:hover .thumbnailImage {
+  filter: brightness(0.9);
+}
+
+.playIconWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(229, 62, 62, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(229, 62, 62, 0.6);
+  transition: transform 0.2s ease;
+  z-index: 2;
+  color: white;
+}
+
+.thumbnailButton:hover .playIconWrapper {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.iconSvg {
+  width: 24px;
+  height: 24px;
+}
+
+.videoTitle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  left: 20px;
+  color: white;
+  text-align: right;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  z-index: 2;
+  font-size: 1.1rem;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #A0AEC0;
+  text-align: center;
+  font-style: italic;
+}

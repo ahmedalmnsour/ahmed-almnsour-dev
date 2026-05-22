@@ -1,0 +1,56 @@
+/* AboutSection.module.css */
+
+.section {
+  background-color: #1A202C;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: #3182CE;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #E2E8F0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 100px 20px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 1.25rem;
+  }
+}
