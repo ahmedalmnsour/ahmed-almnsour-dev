@@ -1,60 +1,51 @@
-# 📱 موقع أحمد المنصور الشخصي (Portfolio Website)
+# موقعي الشخصي
 
 هنا متنفسي، حيث يلتقي الكود بالكلمة. مقالات تقنية، تحديات، وتجارب من الميدان.
 
-🔗 **رابط الموقع المباشر:** [ahmed.almnsour.net](https://ahmed.almnsour.net/)
+![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![CSS Modules](https://img.shields.io/badge/CSS_Modules-1572B6?logo=css3&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000?logo=vercel)
 
 <p align="center">
-  <img src="public/mockup.png" alt="Ahmed AlMansour Portfolio" width="100%" />
+  <img src="public/mockup.png" alt="موقع أحمد المنصور" width="100%" />
 </p>
+
+**[🔗 الموقع المباشر](https://ahmed.almnsour.net)**
 
 ---
 
-## 📊 الأداء
+## الأداء
 
-100 ديسكتوب · 99 جوال — مقاس بـ Google PageSpeed Insights.
+النتائج في [Google PageSpeed Insights](https://pagespeed.web.dev/):
 
 ![Performance Score](./public/images/performance-score.webp)
 
----
-
-## 🛠️ التقنيات المستخدمة
-
-* **TypeScript**: للأمان النوعي، والتطوير الأسرع.
-* **Next.js 16** (App Router): SSR/SSG للأداء والـ SEO.
-* **CSS Modules**: بعيداً عن المكتبات، من أجل التحكم الكامل بالتصميم.
-* **Vercel**: النشر التلقائي بواسطة GitHub، ووقت استجابة سريع.
 
 ---
 
-## 🚀 تشغيل المشروع محليًا
+## التشغيل المحلّي
 
-1. **نسخ المستودع:**
-   ```bash
-   git clone https://github.com/ahmedalmnsour/ahmed-almnsour-dev.git
-    ```
-2.  **الدخول للمجلد:**
-    ```bash
-    cd ahmed-almnsour-dev
-    ```
-3.  **تثبيت المكتبات:**
-    ```bash
-    npm install
-    ```
-4.  **تشغيل خادم التطوير:**
-    ```bash
-    npm run dev
-    ```
-5.  افتح [http://localhost:3000](http://localhost:3000) في متصفحك.
+```bash
+git clone https://github.com/ahmedalmnsour/ahmed-almnsour-dev.git
+cd ahmed-almnsour-dev
+npm install
+npm run dev
+```
+
+افتح [http://localhost:3000](http://localhost:3000) في المتصفّح.
 
 ---
 
-## 💬 تواصل معي
+## لنتحدث
 
-- 📧 البريد الإلكتروني: [almnsour.ahmed@gmail.com](mailto:almnsour.ahmed@gmail.com)
-- 📱 واتساب: [تحدث معي](https://wa.me/96597311821)
-- 💼 LinkedIn: [أحمد المنصور](https://www.linkedin.com/in/ahmedalmnsour/)
+- البريد: [almnsour.ahmed@gmail.com](mailto:almnsour.ahmed@gmail.com)
+- واتساب: [راسلني](https://wa.me/96597311821)
+- لينكدإن: [أحمد المنصور](https://www.linkedin.com/in/ahmedalmnsour/)
 
 ---
 
-> تم إعادة بناء الموقع بالكامل في مايو 2026.
+## الترخيص
+
+- **الكود:** [MIT](./LICENSE) — يمكن استخدامه بحرّية.
+- **المحتوى** (المقالات، الصور، الفيديوهات، التصميم): © أحمد المنصور. جميع الحقوق محفوظة.
