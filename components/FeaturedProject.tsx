@@ -40,10 +40,10 @@ export default function FeaturedProject() {
               </h3>
 
               <p className={styles.projectDescription}>
-              نظام تداول خاص بسوق الذهب (XAUUSD)، ما زال قيد البحث والتطوير.<br />
-              يعتمد النظام على فكرة <strong>الكشّافة والقنّاص</strong> و<strong>مجلس المستشارين</strong>،<br /> لكل مستشار
-              دور محدّد، بالإضافة لخوارزمية <strong>Causal Decision</strong> لتقييم دور كل مستشار.<br />
-              ما زلت أختبره على بيانات تاريخية <strong>12 عاماً</strong>، قبل الانتقال للتداول الحقيقي.
+                نظام تداول خاص بسوق الذهب (XAUUSD)، ما زال قيد البحث والتطوير.<br />
+                يعتمد النظام على فكرة <strong>الكشّافة والقنّاص</strong> و<strong>مجلس المستشارين</strong>،<br /> لكل مستشار
+                دور محدّد، ويراقب أداءهم نظام <strong>AdvisorsScoreboard</strong>.<br />
+                ما زلت أختبره على بيانات تاريخية <strong>12 عاماً</strong>، قبل الانتقال للتداول الحقيقي.
               </p>
               
               <div className={styles.techStack}>
