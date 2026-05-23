@@ -39,10 +39,10 @@ npm run dev
 
 ## لنتحدث
 
-- البريد: [almnsour.ahmed@gmail.com](mailto:almnsour.ahmed@gmail.com)
-- واتساب: [راسلني](https://wa.me/96597311821)
-- لينكدإن: [أحمد المنصور](https://www.linkedin.com/in/ahmedalmnsour/)
-
+- **البريد:** [almnsour.ahmed@gmail.com](mailto:almnsour.ahmed@gmail.com)
+- **لينكدإن:** [أحمد المنصور](https://www.linkedin.com/in/ahmedalmnsour/)
+- **واتساب:** [راسلني](https://wa.me/96597311821)
+ 
 ---
 
 ## الترخيص
