@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: 'أحمد المنصور | مُعلِّم ومُطوِّر',
   description: 'أسكن المسافة بين الفصل الدراسي وشاشة الكود. مُعلِّم حتى يتضح المعنى، ومُطوِّر حتى تظهر الفكرة.',
   icons: { icon: '/icon.svg' },
+  alternates: { canonical: './' },
   
   openGraph: {
     title: 'أحمد المنصور | مُعلِّم ومُطوِّر',
