@@ -138,3 +138,14 @@
   font-size: 0.75rem;
   font-weight: 600;
 }
+
+.badgeAlpha {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: rgba(237, 137, 54, 0.15);
+  color: #F6AD55;
+  border: 1px solid rgba(237, 137, 54, 0.35);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

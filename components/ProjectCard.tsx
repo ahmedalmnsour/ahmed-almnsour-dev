@@ -9,7 +9,7 @@ export interface Project {
   category: 'design' | 'code';
   type?: string;
   description?: string;
-  status?: 'soon' | 'beta' | 'closed' | 'live' | 'research';
+  status?: 'soon' | 'beta' | 'closed' | 'live' | 'research' | 'alpha';
 }
 
 interface ProjectCardProps {
@@ -65,6 +65,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             )}
             {project.status === 'research' && (
                 <span className={styles.badgeResearch}>قيد التطوير ⚙️</span>
+            )}
+            {project.status === 'alpha' && (
+                <span className={styles.badgeAlpha}>ألفا (Alpha)</span>
             )}
 
         </div>

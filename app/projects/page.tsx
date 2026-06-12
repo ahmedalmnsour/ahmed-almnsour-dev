@@ -8,7 +8,25 @@ import WorkloadWidget from '@/components/WorkloadWidget';
 const allProjects: Project[] = [
 
   {
-    id: 1,
+    id: 16,
+    title: 'خِطاب (@khitab/core)',
+    description: 'مكتبة npm عربية مفتوحة المصدر تقدّم صيغ المخاطبة الصحيحة (مذكّر ومؤنّث ومحايد) لنصوص الواجهات: 1367 عبارة مراجَعة لغوياً، بـTypeScript وصفر تبعيات تشغيل.',
+    image: '/images/khitab-cover.webp',
+    link: 'https://www.npmjs.com/package/@khitab/core',
+    category: 'code',
+    status: 'alpha'
+  },
+  {
+    id: 15,
+    title: 'نظامي، منصة لإنشاء الجداول',
+    description: 'منصة ويب لإنشاء الجداول المدرسية، تتيح للإدارة توزيع الحصص وفق أحدث المعايير والخوارزميات الحديثة.',
+    image: '/images/mynizam.webp',
+    link: '#',
+    category: 'code',
+    status: 'soon'
+  },
+  {
+    id: 14,
     title: 'منصة زميلي (v2.0.0)',
     description: 'الإصدار الثاني المكتمل: حل هندسي متكامل لإدارة حصص الاحتياط في القطاع التعليمي بكفاءة عالية.',
     image: '/images/myzameel.2.0.0.webp',
@@ -17,8 +35,8 @@ const allProjects: Project[] = [
     status: 'live'
   },
   {
-    id: 2,
-    title: 'نظام تداول - العقل الذهبي',
+    id: 13,
+    title: 'نظام تداول | العقل الذهبي',
     description: "نظام تداول خاص بسوق الذهب (XAUUSD)، ما زال قيد البحث والتطوير. يعتمد على فكرة الكشّافة والقنّاص ومجلس المستشارين، مع خوارزمية Causal Decision لتقييم الأدوار.",
     image: '/images/trade-screenshot.webp',
     link: "/images/gold-ai-full.webp",
@@ -26,27 +44,25 @@ const allProjects: Project[] = [
     status: 'research'
   },
   {
-    id: 3,
-    title: 'كودي - مولد الباركود',
+    id: 12,
+    title: 'كودي | مولد الباركود',
     description: 'تطبيق ويب لإنشاء وتخصيص رموز QR بشكل فوري وسهل.',
     image: '/images/qrcodi.webp',
     link: 'https://www.qrcodi.me/',
     category: 'code',
     status: 'live'
   },
-
   {
-    id: 4,
-    title: '+40 مشروع خاص (Enterprise)',
-    description: 'مشاريع برمجية خاصة (Private Source) تم تطويرها لشركات وعملاء منذ عام 2008. (حقوق الملكية والنشر محفوظة للعملاء).',
-    image: '/images/private.webp',
+    id: 11,
+    title: 'اختبارات الثانوية',
+    description: 'قريباً: منصة تفاعلية لطلاب الثانوية العامة لأداء اختبارات تجريبية.',
+    image: '/images/quiz.webp',
     link: '#',
     category: 'code',
-    status: 'closed'
+    status: 'soon'
   },
-
   {
-    id: 5,
+    id: 10,
     title: 'المحول العربي (Arabic PDF Master)',
     description: 'قريباً: الأداة الأولى من نوعها المعتمدة على الذكاء الاصطناعي لتحويل ملفات Word العربية إلى PDF مع الحفاظ على الجداول.',
     image: '/images/pdf-master.webp',
@@ -55,26 +71,7 @@ const allProjects: Project[] = [
     status: 'soon'
   },
   {
-    id: 6,
-    title: 'نظامي، منصة لإنشاء الجداول',
-    description: 'منصة ويب لإنشاء الجداول المدرسية، تتيح للإدارة توزيع الحصص والموارد وفق أحدث المعايير والخوارزميات الحديثة.',
-    image: '/images/school-erp.webp',
-    link: '#',
-    category: 'code',
-    status: 'soon'
-  },
-
-  {
-    id: 7,
-    title: 'اختبارات الثانوية التجريبية',
-    description: 'قريباً: منصة تفاعلية لطلاب الثانوية العامة لأداء اختبارات تجريبية.',
-    image: '/images/quiz.webp',
-    link: '#',
-    category: 'code',
-    status: 'soon'
-  },
-  {
-    id: 8,
+    id: 9,
     title: 'مَعْرِض الأعمال',
     description: 'دراسة حالة عن كيفية بناء هذا الموقع باستخدام Next.js.',
     image: '/images/nextjs.webp',
@@ -83,7 +80,16 @@ const allProjects: Project[] = [
     status: 'live'
   },
   {
-    id: 9,
+    id: 8,
+    title: '+40 مشروع خاص (Enterprise)',
+    description: 'مشاريع برمجية خاصة (Private Source) تم تطويرها لشركات وعملاء منذ عام 2008. (حقوق الملكية والنشر محفوظة للعملاء).',
+    image: '/images/private.webp',
+    link: '#',
+    category: 'code',
+    status: 'closed'
+  },
+  {
+    id: 7,
     title: 'عقود الصيانة والدعم (Retainers)',
     description: 'خدمة إدارة تقنية مستمرة لضمان استقرار المواقع، الحماية من الثغرات، وتحديث الأنظمة لعدد من العملاء الاستراتيجيين.',
     image: '/images/maintenance.webp',
@@ -93,7 +99,7 @@ const allProjects: Project[] = [
   },
 
   {
-    id: 10,
+    id: 6,
     title: 'الدولة العباسية الأولى',
     image: '/images/1.webp',
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/1.pdf',
@@ -101,7 +107,7 @@ const allProjects: Project[] = [
     type: 'مطوية',
   },
   {
-    id: 11,
+    id: 5,
     title: 'الدولة الأموية',
     image: '/images/2.webp',
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/2.pdf',
@@ -109,7 +115,7 @@ const allProjects: Project[] = [
     type: 'مطوية',
   },
   {
-    id: 12,
+    id: 4,
     title: 'خلافة النبوة',
     image: '/images/3.webp',
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/3.pdf',
@@ -117,7 +123,7 @@ const allProjects: Project[] = [
     type: 'مطوية',
   },
   {
-    id: 13,
+    id: 3,
     title: 'مشجرة بني أمية',
     image: '/images/4.webp',
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/4.pdf',
@@ -125,7 +131,7 @@ const allProjects: Project[] = [
     type: 'مطوية',
   },
   {
-    id: 14,
+    id: 2,
     title: 'مشجرة نسب النبي',
     image: '/images/5.webp',
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/5.pdf',
@@ -133,7 +139,7 @@ const allProjects: Project[] = [
     type: 'مطوية',
   },
   {
-    id: 15,
+    id: 1,
     title: 'أحداث في حياة النبي',
     image: '/images/6.webp',
     link: 'https://github.com/ahmedalmnsour/ahmed-almnsour-dev/releases/download/files-v1/6.pdf',
@@ -145,7 +151,9 @@ const allProjects: Project[] = [
 export default function ProjectsPage() {
   const [filter, setFilter] = useState<'code' | 'design'>('code');
 
-  const filteredProjects = allProjects.filter(p => p.category === filter);
+  const filteredProjects = allProjects
+    .filter(p => p.category === filter)
+    .sort((a, b) => (filter === 'code' ? b.id - a.id : a.id - b.id));
 
   return (
     <main className="main-content">
