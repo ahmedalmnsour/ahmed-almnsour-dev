@@ -9,10 +9,10 @@ export default function PortfolioStory() {
 
       <header className={styles.header}>
         <h1 className={styles.title}>
-          أكثر من 15 عاماً من الخبرة: رحلة التطور
+          مشواري مع تطوير الويب
         </h1>
         <p className={styles.description}>
-          في بدايات ممارستي لبناء المواقع، أتحدث عن أواخر العام 2008، كنت أبني المواقع باستخدام HTML والفلاش، واليوم أكتب الكود اللي يعمل على سيرفرات موزعة حول العالم بنفس الوقت، المسافة بين النقطتين مو سنوات ولكن قرارات، أدوات وأخطاء دفعت ثمناها بلا شك من وقتي وأعصابي.
+           في بدايات ممارستي، كنت أبني المواقع باستخدام HTML والفلاش، واليوم أكتب الكود اللي يعمل على سيرفرات موزّعة حول العالم بنفس الوقت. المسافة بين النقطتين مو سنوات، ولكن قرارات وأدوات وأخطاء دفعت ثمنها من وقتي وأعصابي.
         </p>
       </header>
 
@@ -30,7 +30,7 @@ export default function PortfolioStory() {
         </h2>
         <div className={styles.techContent}>
           <p className={styles.techDescription}>
-            الموقع يشتغل على <strong>Next.js</strong>، وهو فريمورك مبني فوق <strong>React</strong> أطلق عام <strong>2016</strong> عشان يحل مشاكل كانت تسبب أزمات لكل مطور ويب بذيك الفترة، مو بس اخترته لأنه موضة، ولكن لأنه جاوب على أسئلة كنت أبحث عن إجاباتها.
+             الموقع يشتغل على <strong>Next.js</strong>، فريمورك مبني فوق  <strong>React</strong> أُطلق عام <strong>2016</strong>. ما اخترته لأنه موضة، بل لأنه جاوب على أسئلة كنت أبحث عن إجاباتها.
           </p>
           <ul className={styles.techList}>
             <li className={styles.techItem}>
@@ -46,66 +46,52 @@ export default function PortfolioStory() {
         </div>
       </section>
 
-      <section className={styles.timelineSection}>
-        <h2 className={styles.timelineTitle}>
-          📈 التطور التقني والزمني لمشاريعي
-        </h2>
-        <p className={styles.timelineDescription}>
-          بهالمقالة بحاول أقسّم مشواري لخمس مراحل، البداية كانت HTML Tables والفلاش، ما كنت أتخيل إن هالأدوات راح تتغير بهالسرعة، وبعدها جاء jQuery وBootstrap وكانت طفرة بالنسبة لي، ثم React اللي بطّلت عيوني على عالم ثاني، واستقريت على Next.js، وأخيراً في 2026 انتقلت إلى TypeScript، مو موضة، لأن كل مرحلة كانت السابقة تأكلني.
+      <section className={styles.journeySection}>
+        <h2 className={styles.journeyTitle}>📈 كيف تطوّرت أدواتي</h2>
+        <p className={styles.journeyIntro}>
+          أقسّم مشواري بحسب الأدوات وما بنيتُه بها، لا بحسب السنين.
         </p>
-        <div className={styles.timelineContainer}>
 
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineHeader}>
-              <span>2008 - 2012: HTML Tables & Flash</span>
-              <span>25%</span>
-            </div>
-            <div className={styles.progressBarBg}>
-              <div className={`${styles.progressBarFill} ${styles.fillRed}`}></div>
-            </div>
+        <div className={styles.journeyContainer}>
+          <div className={styles.station}>
+            <h3 className={styles.stationTool}>HTML &amp; Flash</h3>
+            <p className={styles.stationDesc}>مواقع تعريفيّة وصفحات ثابتة، بداياتي الأولى.</p>
           </div>
 
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineHeader}>
-              <span>2013 - 2018: jQuery & Bootstrap</span>
-              <span>55%</span>
-            </div>
-            <div className={styles.progressBarBg}>
-              <div className={`${styles.progressBarFill} ${styles.fillYellow}`}></div>
-            </div>
+          <div className={styles.station}>
+            <h3 className={styles.stationTool}>WordPress والمنتديات (vBulletin)</h3>
+            <p className={styles.stationDesc}>تخصيصات وإضافات وتعديلات لمواقع عدد من العملاء.</p>
           </div>
 
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineHeader}>
-              <span>2019 - 2022: React.js (SPA)</span>
-              <span>80%</span>
-            </div>
-            <div className={styles.progressBarBg}>
-              <div className={`${styles.progressBarFill} ${styles.fillTeal}`}></div>
-            </div>
+          <div className={styles.station}>
+            <h3 className={styles.stationTool}>React (SPA)</h3>
+            <p className={styles.stationDesc}>تطبيقات صفحة واحدة تفاعليّة.</p>
           </div>
 
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineHeader}>
-              <span>2023 - 2025: Next.js + JavaScript</span>
-              <span>90%</span>
-            </div>
-            <div className={styles.progressBarBg}>
-              <div className={`${styles.progressBarFill} ${styles.fillTealBlue}`}></div>
-            </div>
+          <div className={styles.station}>
+            <h3 className={styles.stationTool}>Next.js</h3>
+            <p className={styles.stationDesc}>بناءٌ أكمل: أداء، أرشفة.</p>
           </div>
 
-          <div className={styles.timelineItem}>
-            <div className={`${styles.timelineHeader} ${styles.activeHeader}`}>
-              <span>2026 - الآن: Next.js + TypeScript</span>
-              <span>100%</span>
-            </div>
-            <div className={`${styles.progressBarBg} ${styles.activeBg}`}>
-              <div className={`${styles.progressBarFill} ${styles.fillBlueGradient}`}></div>
-            </div>
+          <div className={`${styles.station} ${styles.stationActive}`}>
+            <h3 className={styles.stationTool}>Next.js + TypeScript  مستقرّي الحالي</h3>
+            <p className={styles.stationDesc}>
+              وبها شغلي الحالي: khitab (منشورة على npm) ومنصّة زميلي.
+            </p>
           </div>
-
         </div>
+
+        <div className={styles.foundationBar}>
+          <span className={styles.foundationTs} />
+          <span className={styles.foundationTsLabel}>TypeScript · منذ 2022</span>
+          <span className={styles.foundationLabel}>JavaScript · الأساس المشترك</span>
+        </div>
+
+        <p className={styles.journeyFoot}>
+          كان <strong>JavaScript</strong> الخيطَ الجامع عبر المراحل jQuery، React، Next.js.
+          ومن 2022 صارت <strong>TypeScript</strong> خياري الافتراضي فوقه، دون أن أتركه؛
+          ما زلت أكتب JavaScript حيث يلزم.
+        </p>
       </section>
 
       <section className={styles.benefitsSection}>
@@ -113,7 +99,7 @@ export default function PortfolioStory() {
           📱 لماذا هذه التقنية هي الأقوى حالياً؟
         </h2>
         <p className={styles.benefitsDescription}>
-          بعد كل هالسنوات، استقريت على Next.js مو عن عاطفة أكيد، لكن الموقع ما يحمّل كل شيء دفعة وحدة على المتصفح مثل ما كان يصير في 2015، ولكن يحمّل اللي يحتاجه الزائر بس. وعلى عكس مرحلة React، قوقل اليوم يقرأ الموقع بوضوح وهم بعد يرتّبه في نتائج البحث، هذا بروحه يسوى لأي مشروع تجاري.
+           استقريت على Next.js مو عن عاطفة، لكن لأن الموقع ما يحمّل كل شيء دفعة وحدة على المتصفّح مثل أيام الـ SPA، بل يحمّل اللي يحتاجه الزائر بس. وعلى عكس مرحلة React، قوقل اليوم يقرأ الموقع بوضوح ويفهرسه، وهذا بروحه يسوى لأي مشروع تجاري.
         </p>
       </section>
 
@@ -122,7 +108,7 @@ export default function PortfolioStory() {
           🐛 سجل المشاكل (Debugging Log)
         </h2>
         <p className={styles.debugIntro}>
-          المطور الحقيقي مو الشخص اللي ما يواجه مشاكل، بالعكس هو اللي يواجهها ويعرف شلون يحلها، وهذي بعض التحديات الفعلية الي صادفتني وأنا أبني وأطور، مو مجرد أمثلة عامة من المدوّنات، ولكن حقيقة عشت لحظاتها.
+          المطوّر الحقيقي مو اللي ما يواجه مشاكل، بل اللي يعرف شلون يحلّها. هذي بعض التحديات اللي صادفتني وأنا أبني، وكيف تجاوزتها.
         </p>
 
         <div className={`${styles.debugCard} ${styles.borderRed}`}>
@@ -171,8 +157,7 @@ export default function PortfolioStory() {
           💡 الخلاصة لعملائي
         </h2>
         <p className={styles.adviceText}>
-          إذا طلبت مني أبني لك موقع، أنت لا تشتري مني كود، أنت تشتري خبرة تجاوزت 15 عام من القرارات الصحيحة والخاطئة، ومشاكل قمت عليها وأنا ما أعرف من وين أبدأ. <br />
-         أستخدم Next.js وأضمن من خلالها ثلاثة أشياء ماكو أحد يستغني عنها: <br /> الاستقرار، الأمان، الظهور في محركات البحث.
+          إذا طلبت مني أبني لك موقع، أنت ما تشتري كود، أنت تشتري خبرةً عمليّة: قرارات صحيحة وخاطئة، ومشاكل عشتها وعرفت من وين أمسكها. أبني على Next.js لأنها تعطيني أساسًا أركّز فيه على ثلاثة أشياء يحتاجها أي مشروع جادّ: الاستقرار، الأداء، والظهور في محركات البحث والأكيد مع ممارسات أمان سليمة في التعامل مع البيانات.
         </p>
       </section>
 

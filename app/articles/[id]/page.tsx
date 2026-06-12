@@ -151,16 +151,18 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           />
         )}
         <div className={styles.headerOverlay}>
-          <div className={styles.headerContent}>
-            <span className={styles.categoryLabel}>
-              {article.categoryLabel}
-            </span>
-            <h1 className={styles.title}>{article.title}</h1>
+        <div className={styles.headerContent}>
+          <span className={styles.categoryLabel}>
+            {article.categoryLabel}
+          </span>
+          <h1 className={styles.title}>{article.title}</h1>
+          {article.date && (
             <div className={styles.date}>
-               📅   {article.date}
-             </div>
-          </div>
+              📅 {article.date}
+            </div>
+          )}
         </div>
+      </div>
       </div>
 
       <article className={styles.articleBox}>

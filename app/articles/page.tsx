@@ -14,8 +14,8 @@ export default function ArticlesArchive() {
               </h1>
               <div className={styles.underline}></div>
               <p className={styles.description}>
-              اكتفيت في هالمعمل بتوثيق بعض المشاكل اللي واجهتها، وهي خلاصة تجربة تتجاوز 15 عاماً.<br />
-              اللي تلقاه هني تجربة شخصية في سياقها، مو حكم عام ومو مرجع. وقد أٌُسقِطت وغُيِّرت بعض التفاصيل غير المؤثرة، إما لأنها لا تخدم الفكرة، أو لاعتبارات خصوصية، مع بقاء الفكرة التقنية ومسار التشخيص كما هما، ستجد عامية كويتية أحياناً، هذا متعمد.
+                اكتفيت في هالمعمل بتوثيق بعض المشاكل اللي واجهتها، وهي خلاصة تجربة شخصية في الميدان.<br />
+                 اللي تلقاه هني تجربة في سياقها، مو حكم عام ومو مرجع. وقد أٌُسقِطت وغُيِّرت بعض التفاصيل غير المؤثرة، إما لأنها لا تخدم الفكرة، أو لاعتبارات خصوصية، مع بقاء الفكرة التقنية ومسار التشخيص كما هما، ستجد عامية كويتية أحياناً، هذا متعمد.
               </p>
       </div>
 
@@ -41,9 +41,9 @@ export default function ArticlesArchive() {
               )}
 
               <div className={styles.content}>
-                <div className={styles.meta}>
-                  <span>📅 {article.date}</span>
-                </div>
+              <div className={styles.meta}>
+                {article.date && <span>📅 {article.date}</span>}
+              </div>
 
                 <h3 className={styles.cardTitle}>
                   {article.title}
