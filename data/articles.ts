@@ -103,7 +103,7 @@ export const articlesData: Article[] = [
     <p>خِطاب الحين على إصداره الأول، وعلى الرف أشياء تنتظر دافعاً حقيقياً قبل ما أبنيها مثل: hook لـ React، وadapter يربطه بـ i18next، وصيغ محايدة أكثر، وربما فئات أكثر، ودعم الجمع والمثنى. والمهم إني ما راح أضيف شي إلا لمّا يطلبه أحد فعلاً.</p>
     <div style="background: rgba(49, 130, 206, 0.1); border: 1px solid #3182CE; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
       <p style="margin-bottom: 15px; color: #E2E8F0; font-size: 0.95rem;">
-        <strong>تبي تشوف "احفظ" تصير "احفظي" قدامك؟</strong><br>
+        <strong>تبي تشوف "أنشئ" تصير "أنشئي" قدامك؟</strong><br>
         التطبيق العرضي حيّ، نموذج تسجيل بسيط يستخدم المكتبة، وفيه زر اقتراح عبارة جديدة.
       </p>
       <a href="https://ahmedalmnsour.github.io/khitab/" target="_blank" style="background-color: #3182CE; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; transition: background 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
